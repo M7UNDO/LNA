@@ -1,4 +1,15 @@
 :root {
+  --primary-colour: #cacaca;
+  --accent-colour: #3960AD;
+  --background-colour: rgb(238, 237, 237);
+  --background-colour-2: rgb(228, 228, 228);
+  --background-colour-3: #c1c5c8;
+  --typography-colour: #333d47;
+
+  /*fonts*/
+  --primary-font: "Satoshi", sans-serif;
+  --secondary-font: "PP Neue Montreal", sans-serif;
+
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -13,21 +24,28 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/*a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
 }
 a:hover {
   color: #535bf2;
-}
+}*/
 
 body {
+  width: 100%;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
@@ -46,6 +64,7 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
@@ -53,6 +72,7 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
 
 @media (prefers-color-scheme: light) {
   :root {
