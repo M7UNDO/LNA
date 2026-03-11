@@ -8,6 +8,7 @@ function Home() {
   return (
     <>
       <Hero/>
+      <h2>Practice Areas</h2>
       <ServiceContainer/>
     </>
   );

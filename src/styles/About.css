@@ -1,0 +1,90 @@
+.about-page {
+  /*font-family: var(--primary-font);*/
+  background: var(--background-colour);
+  color: var(--typography-colour);
+}
+
+.about-hero {
+  text-align: center;
+  font-weight: 700;
+  padding: 80px 20px 50px;
+  background-color: red;
+}
+
+.about-hero h1 {
+  font-size: 4.2rem;
+  margin-bottom: 10px;
+}
+
+.about-hero p {
+  color: var(--accent-colour);
+  font-size: 1.6rem;
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px 80px;
+}
+
+.about-section {
+  margin-bottom: 60px;
+}
+
+.about-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  padding-left: 12px;
+}
+
+.about-section p {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.about-card {
+  background: rgba(255,255,255,0.03);
+  padding: 30px;
+  border-left: 3px solid var(--accent-colour);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 25px;
+}
+
+.value {
+  padding: 20px;
+  background: rgba(255,255,255,0.03);
+  border-bottom: 2px solid var(--accent-colour);
+}
+
+.value h4 {
+  margin-bottom: 8px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.team-member {
+  padding: 25px;
+  background: rgba(255,255,255,0.03);
+  border-left: 3px solid var(--accent-colour);
+}
+
+.role {
+  color: var(--accent-colour);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
