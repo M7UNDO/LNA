@@ -1,19 +1,22 @@
 .footer {
-  background: var(--background-colour);
   color: var(--typography-colour);
-  padding: 60px 8%;
-  border-top: 3px solid var(--accent-colour);
+  padding: 3rem 8%;
+  border-top: 1.5px solid var(--accent-colour);
+}
+
+.logo{
+  width: 10rem;
+  height: auto;
 }
 
 .footer-container {
-  max-width: 1300px;
-  margin: auto;
+  width: 100%;
 }
 
 .footer-top {
   display: grid;
   grid-template-columns: 2fr 1.5fr 2fr 1fr;
-  gap: 40px;
+  gap: 4rem;
   padding-bottom: 40px;
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
@@ -37,13 +40,20 @@
 .footer-contact h4,
 .footer-services h4,
 .footer-social h4 {
-  margin-bottom: 12px;
-  color: var(--accent-colour);
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: var(--typography-colour);
 }
 
-.footer-contact p {
-  font-size: 14px;
-  margin-bottom: 6px;
+.footer-contact p, .footer-contact a{
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+  text-decoration: none;
+  color: var(--typography-colour);
+}
+
+.footer-contact a:hover{
+  color: var(--accent-colour);
 }
 
 .footer-services ul {
@@ -52,9 +62,8 @@
 }
 
 .footer-services li {
-  font-size: 14px;
-  margin-bottom: 6px;
-  opacity: 0.85;
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
 }
 
 .footer-services li:hover {
@@ -65,13 +74,13 @@
 .social-icons {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 1rem;
 }
 
 .social-icons a {
   text-decoration: none;
   color: var(--typography-colour);
-  font-size: 14px;
+  font-size: 2rem;
   transition: color 0.3s;
 }
 

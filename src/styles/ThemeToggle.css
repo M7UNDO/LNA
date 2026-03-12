@@ -1,0 +1,22 @@
+
+.theme-btn{
+  height: 3rem;
+  width: 3rem;
+  background-color: var(--background-colour);
+  border: 2px solid var(--background-light);
+  color: var(--typography-colour);
+  border-radius: 50%;
+  padding: 2rem;
+  margin-left: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.theme-btn:focus{
+  border: 2px solid var(--background-light);
+}
+
+.theme-btn:hover{
+  opacity: 1;
+}

@@ -1,40 +1,40 @@
-.about-page {
-  /*font-family: var(--primary-font);*/
-  background: var(--background-colour);
-  color: var(--typography-colour);
-}
-
 .about-hero {
+  background-image: url(../assets/backgrounds/Shiny-Overlay.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 30rem;
   text-align: center;
-  font-weight: 700;
-  padding: 80px 20px 50px;
-  background-color: red;
+  padding: 8rem 2rem 5rem;
+  color: white;
 }
 
 .about-hero h1 {
   font-size: 4.2rem;
-  margin-bottom: 10px;
+  font-weight: 600;
+  margin: 2rem;
 }
 
 .about-hero p {
-  color: var(--accent-colour);
-  font-size: 1.6rem;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 400;
 }
 
 .about-container {
-  max-width: 1100px;
+  max-width: 110rem;
   margin: auto;
-  padding: 40px 20px 80px;
+  padding: 4rem 2rem 8rem;
 }
 
 .about-section {
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 }
 
 .about-section h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  padding-left: 12px;
+  font-size: 2.8rem;
+  margin: 3rem 0;
+  padding-left: 1.2rem;
 }
 
 .about-section p {
@@ -46,45 +46,78 @@
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 3rem;
 }
 
 .about-card {
-  background: rgba(255,255,255,0.03);
-  padding: 30px;
+  font-size: 1.6rem;
+  background: var(--background-light);
+  padding: 3rem;
   border-left: 3px solid var(--accent-colour);
+  margin-bottom: 2rem;
 }
 
 .values-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-  gap: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
 
 .value {
-  padding: 20px;
-  background: rgba(255,255,255,0.03);
-  border-bottom: 2px solid var(--accent-colour);
+  font-size: 1.6rem;
+  padding: 2rem;
+  background: var(--background-light);
+  border-left: 3px solid var(--accent-colour);
 }
 
 .value h4 {
   margin-bottom: 8px;
 }
 
+.profile{
+  width: 10rem;
+  height: 10rem;
+}
+
 .team-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
+  margin-bottom: 1rem;
 }
 
 .team-member {
   padding: 25px;
   background: rgba(255,255,255,0.03);
-  border-left: 3px solid var(--accent-colour);
+}
+
+.team-member h3{
+  font-size: 1.6rem;
 }
 
 .role {
   color: var(--accent-colour);
+  font-size: 1.6rem;
   font-weight: 500;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  opacity: 0.7;
 }
+
+.contact, .email{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.6rem;
+  color: var(--accent-colour);
+  margin-top: 1rem;
+}
+
+.contact a, .email a{
+  color: var(--accent-colour);
+  text-decoration: none;
+}
+
+.contact a:hover, .email a:hover{
+  text-decoration: underline;
+}
+

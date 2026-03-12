@@ -1,9 +1,8 @@
 :root {
   --primary-colour: #cacaca;
-  --accent-colour: #3960AD;
-  --background-colour: rgb(238, 237, 237);
-  --background-colour-2: rgb(228, 228, 228);
-  --background-colour-3: #c1c5c8;
+  --accent-colour: #3960ad;
+  --background-colour: rgb(229, 229, 229);
+  --background-light: rgb(255, 255, 255);
   --typography-colour: #333d47;
 
   /*fonts*/
@@ -17,11 +16,31 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary-colour: #cacaca;
+    --accent-colour: #3960ad;
+    --background-colour: rgb(29, 28, 32);
+    --background-colour-light: rgb(45, 44, 50);
+    --typography-colour: #e0e0e0;
+  }
+}
+
+[data-theme="light"] {
+  --primary-colour: #cacaca;
+  --accent-colour: #3960ad;
+  --background-colour: rgb(230, 230, 230);
+  --background-light: rgb(255, 255, 255);
+  --typography-colour: #333d47;
+}
+[data-theme="dark"] {
+  --primary-colour: #cacaca;
+  --accent-colour: #3960ad;
+  --background-colour: rgb(29, 28, 32);
+  --background-light: rgb(45, 44, 50);
+  --typography-colour: #e0e0e0;
 }
 
 * {
@@ -44,6 +63,8 @@ a:hover {
 }*/
 
 body {
+  background-color: var(--background-colour);
+  color: var(--typography-colour);
   width: 100%;
   margin: 0;
 }
@@ -53,7 +74,7 @@ h1 {
   line-height: 1.1;
 }
 
-h2{
+h2 {
   font-size: 2.5rem;
   font-weight: 600;
   line-height: 3rem;
@@ -81,15 +102,3 @@ button:focus-visible {
 }
 
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}

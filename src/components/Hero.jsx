@@ -10,25 +10,25 @@ export default function Hero() {
   const contentRef = useRef(null);
 
   const slides = [
-  {
-    title: "Professional Legal Services Close to Home",
-    text: "Ngengebule Attorneys Inc provides reliable legal support for individuals, families, and businesses across Johannesburg, with a strong commitment to justice, integrity, and excellence.",
-    button: "View Our Services",
-    image: hero1,
-  },
-  {
-    title: "Legal Support You Can Trust",
-    text: "From civil litigation and labour disputes to contract drafting, estate administration, divorce matters, and Road Accident Fund claims, our firm provides clear guidance and strong representation.",
-    button: "Explore Our Practice Areas",
-    image: hero2,
-  },
-  {
-    title: "Serving Our Community With Integrity",
-    text: "Founded by Luvuyo Gavin Ayanda Ngengebule, our firm combines professional legal expertise with a commitment to accessible and client-focused legal representation.",
-    button: "Contact Our Firm",
-    image: hero3,
-  },
-];
+    {
+      title: "Professional Legal Services Close to Home",
+      text: "Ngengebule Attorneys Inc provides reliable legal support to individuals, families, and businesses across Johannesburg and Gauteng. Situated within the jurisdiction of local courts, our firm also acts as correspondents for attorneys outside the jurisdiction for the receiving and serving of legal documents.",
+      button: "View Our Services",
+      image: hero1,
+    },
+    {
+      title: "Legal Support You Can Trust",
+      text: "From civil litigation and labour disputes to contract drafting, estate administration, divorce matters, and Road Accident Fund claims, our firm provides clear guidance and strong representation.",
+      button: "Explore Our Practice Areas",
+      image: hero2,
+    },
+    {
+      title: "Serving Our Community With Integrity",
+      text: "Founded by Luvuyo Gavin Ayanda Ngengebule, our firm combines professional legal expertise with a commitment to accessible and client-focused legal representation.",
+      button: "Contact Our Firm",
+      image: hero3,
+    },
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -43,6 +43,7 @@ export default function Hero() {
       gsap.fromTo(contentRef.current, {autoAlpha: 0, y: 50}, {duration: 1.2, autoAlpha: 1, y: 0, ease: "power3.out"});
     }
   }, [current]);
+  
 
   return (
     <section id="hero-banner">
@@ -58,7 +59,7 @@ export default function Hero() {
 
           <div className="banner-overlay"></div>
 
-          <img className="hero-bg" src={slide.image} alt="" />
+          <img className="hero-bg" src={slide.image} alt="" loading={index === 0 ? "eager" : "lazy"} decoding="async" />
         </div>
       ))}
 

@@ -23,9 +23,9 @@
   border-radius: 0.25rem;
   padding: 3rem 2rem;
   text-align: center;
-  border: 2px solid var(--background-colour);
+  border: 2px solid var(--background-light);
   box-shadow: 0 0.4rem 1.4rem rgba(0, 0, 0, 0.277);
-  transition: all 0.25s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
   cursor: pointer;
 }
 

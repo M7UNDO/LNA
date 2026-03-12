@@ -1,10 +1,11 @@
 import "../styles/About.css";
 import LegalTeam from "../components/LegalTeam";
+import ShinyOverlay from "../assets/backgrounds/Shiny-Overlay.svg";
 
 export default function About() {
   return (
     <section className="about-page">
-      <div className="about-hero">
+      <div className="about-hero" style={{backgroundImage: `url(${ShinyOverlay})`}}>
         <h1>About Ngengebule Attorneys Inc</h1>
         <p>Justice. Integrity. Excellence.</p>
       </div>
@@ -52,7 +53,7 @@ export default function About() {
             <h3>Our Vision</h3>
             <p>
               To be a trusted and leading law firm that champions justice, empowers communities and contributes
-              meaningfully to the transformation of South Africa’s legal landscape.
+              meaningfully to the transformation of South Africa's legal landscape.
             </p>
           </div>
 
