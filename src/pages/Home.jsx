@@ -10,6 +10,7 @@ function Home() {
       <Hero/>
       <h2>Practice Areas</h2>
       <ServiceContainer/>
+      <h2>Our Commitment</h2>
     </>
   );
 }
