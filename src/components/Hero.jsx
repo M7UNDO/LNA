@@ -1,12 +1,14 @@
-import {useState, useEffect, useRef} from "react";
-import {gsap} from "gsap";
+import { useState, useEffect, useRef } from "react";
+import { gsap } from "gsap";
 import "../styles/Hero.css";
-import hero1 from "../assets/hero/hennie-stander-uL_2nhIOvfM-unsplash.jpg";
-import hero2 from "../assets/hero/pexels-nicola-barts-7927545.jpg";
-import hero3 from "../assets/hero/rachel-martin-yHOhVzVRFMc-unsplash.jpg";
+
+import hero1 from "../assets/hero/hennie-stander-uL_2nhIOvfM-unsplash.webp";
+import hero2 from "../assets/hero/pexels-nicola-barts-7927545.webp";
+import hero3 from "../assets/hero/rachel-martin-yHOhVzVRFMc-unsplash.webp";
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
+  const [loadedImages, setLoadedImages] = useState({});
   const contentRef = useRef(null);
 
   const slides = [
@@ -30,6 +32,22 @@ export default function Hero() {
     },
   ];
 
+ 
+  useEffect(() => {
+    slides.forEach((slide, index) => {
+      const img = new Image();
+      img.src = slide.image;
+
+      img.onload = () => {
+        setLoadedImages((prev) => ({
+          ...prev,
+          [index]: true,
+        }));
+      };
+    });
+  }, []);
+
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
@@ -40,18 +58,30 @@ export default function Hero() {
 
   useEffect(() => {
     if (contentRef.current) {
-      gsap.fromTo(contentRef.current, {autoAlpha: 0, y: 50}, {duration: 1.2, autoAlpha: 1, y: 0, ease: "power3.out"});
+      gsap.fromTo(
+        contentRef.current,
+        { autoAlpha: 0, y: 50 },
+        { duration: 1.2, autoAlpha: 1, y: 0, ease: "power3.out" }
+      );
     }
   }, [current]);
-  
 
   return (
     <section id="hero-banner">
       {slides.map((slide, index) => (
-        <div key={index} className={`hero-slide ${index === current ? "active" : ""}`}>
-          <div className="hero-content" ref={index === current ? contentRef : null}>
+        <div
+          key={index}
+          className={`hero-slide ${
+            index === current && loadedImages[index] ? "active" : ""
+          }`}
+        >
+          <div
+            className="hero-content"
+            ref={index === current ? contentRef : null}
+          >
             <h1>{slide.title}</h1>
             <p>{slide.text}</p>
+
             <a href="#" className="cta-btn">
               {slide.button}
             </a>
@@ -59,7 +89,12 @@ export default function Hero() {
 
           <div className="banner-overlay"></div>
 
-          <img className="hero-bg" src={slide.image} alt="" loading={index === 0 ? "eager" : "lazy"} decoding="async" />
+          <img
+            className="hero-bg"
+            src={slide.image}
+            alt=""
+            decoding="async"
+          />
         </div>
       ))}
 
