@@ -116,16 +116,16 @@ export default function ContactForm() {
             <option value="" disabled>
               Select Service
             </option>
-            <option value="Conveyancing">CONVEYANCING</option>
-            <option value="Notary">NOTARY</option>
-            <option value="Civil Litigation">CIVIL LITIGATION</option>
-            <option value="Labour Law Disputes">LABOUR LAW DISPUTES</option>
-            <option value="Deceased Estates & Estate Planning">DECEASED ESTATES & ESTATE PLANNING</option>
+            <option value="Conveyancing">Conveyencing</option>
+            <option value="Notary">Notary</option>
+            <option value="Civil Litigation">Civil Litigation</option>
+            <option value="Family Law">Family Law</option>
+            <option value="Labour Law Disputes">Labour Law Disputes</option>
+            <option value="Deceased Estates & Estate Planning">Deceased Estates & Estate Planning</option>
             <option value="Contractual Drafting and Dispute Resolution">
-              CONTRACTUAL DRAFTING AND DISPUTE RESOLUTION
+              Contractual Drafting and Dispute Resolution
             </option>
-            <option value="Trust Administration">TRUST ADMINISTRATION</option>
-            <option value="Divorces">DIVORCES</option>
+            <option value="Trust Administration">Trust Administration</option>
           </select>
           <textarea name="message" placeholder="Your Message" className="contact-inputs" required />
           <button type="submit">

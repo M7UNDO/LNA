@@ -6,6 +6,7 @@
   margin: 0 auto;
   justify-content: space-between;
   align-items: flex-start;
+  font-family: var(--primary-font);
 }
 
 .contact-left {
@@ -19,6 +20,7 @@
 
 .contact-left h2{
     text-align: left;
+    font-weight: 400;
 }
 
 .contact-detail{
@@ -35,7 +37,7 @@
 }
 
 .contact-detail span{
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 .contact-heading h3{
@@ -47,11 +49,9 @@
 }
 
 .contact-left .detail-block .label {
-  font-family: var(--secondary-font);
-  font-size: 1.8rem;
-  font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: 500;
   color: var(--typography-colour);
-  margin-bottom: 1rem;
 }
 
 .contact-left .detail-block .value {
@@ -94,12 +94,12 @@
   padding: 3rem;
 }
 
-/* Form Title */
 .contact-right-title {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
   text-align: center;
+  margin-bottom: 5rem;
 }
 
 .contact-right-title hr {
@@ -120,10 +120,10 @@
 /* Inputs */
 .contact-inputs {
   width: 100%;
-  padding: 1.2rem;
+  padding: 1.5rem;
   font-family: var(--secondary-font);
   font-size: 1.4rem;
-  border: 1.5px solid rgb(211, 210, 210);
+  border: 1.5px solid rgb(184, 183, 183);
   color: var(--typography-colour);
   outline: none;
   border-radius: 1rem;
@@ -174,16 +174,15 @@ textarea.contact-inputs {
   font-size: 1.6rem;
 }
 
-/* Submit Button */
 button[type="submit"] {
   width: fit-content;
   padding: 1.6rem 2rem;
-  font-family: var(--primary-font);
+  font-family: var(--secondary-font);
   font-size: 1.6rem;
   background-color: var(--accent-colour);
   color: #fff;
   border: none;
-  border-radius: 0.4rem;
+  border-radius: 1rem;
   cursor: pointer;
   display: flex;
   align-items: center;

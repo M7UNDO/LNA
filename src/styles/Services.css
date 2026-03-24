@@ -1,0 +1,89 @@
+.services {
+  padding: 6rem 2rem;
+  background: var(--background-colour);
+  color: var(--text-colour);
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+.services-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.services-header h1 {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+}
+
+.services-header p {
+  font-size: 1.6rem;
+  opacity: 0.7;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* GRID */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* CARD (NEW NAME: service-panel) */
+.service-panel {
+  padding: 2.5rem;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  background: transparent;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.service-panel h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.service-panel p {
+  font-size: 1.4rem;
+  opacity: 0.7;
+  line-height: 1.5;
+}
+
+.service-link {
+  font-size: 1.3rem;
+  color: var(--primary-colour);
+  margin-top: auto;
+}
+
+/* HOVER */
+.service-panel:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary-colour);
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-header h1 {
+    font-size: 2.4rem;
+  }
+}

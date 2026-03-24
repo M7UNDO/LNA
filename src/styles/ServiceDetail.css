@@ -1,0 +1,26 @@
+.service-detail {
+  padding: 6rem 2rem;
+}
+
+.service-detail-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.service-detail h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.service-detail p {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  opacity: 0.8;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 3rem;
+  color: var(--primary-colour);
+  text-decoration: none;
+}
