@@ -20,7 +20,8 @@
 
 .back-link {
   display: inline-block;
+  font-size: 1.6rem;
   margin-top: 3rem;
-  color: var(--primary-colour);
+  color: var(--accent-colour);
   text-decoration: none;
 }

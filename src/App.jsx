@@ -1,6 +1,6 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import { useState } from "react";
-import ThemeContext from "./context/context"
+import {useState} from "react";
+import ThemeContext from "./context/context";
 import ThemeToggle from "./components/ThemeToggle";
 
 import Home from "./pages/Home";
@@ -11,26 +11,26 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-
+import Breadcrumb from "./components/Breadcrumb";
 
 function App() {
-
-const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState("light");
 
   return (
     <>
-    <ThemeContext.Provider value = {{theme, setTheme}}>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/services" element={<Services />}></Route>
-        <Route path="/services/:id" element={<ServiceDetail/>}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/contact" element={<Contact />}></Route>
-        <Route path="*" element={<NotFound />}></Route>
-      </Routes>
-      <Footer/>
-    </ThemeContext.Provider>
+      <ThemeContext.Provider value={{theme, setTheme}}>
+        <NavBar />
+        <Breadcrumb />
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/services" element={<Services />}></Route>
+          <Route path="/services/:id" element={<ServiceDetail />}></Route>
+          <Route path="/about" element={<About />}></Route>
+          <Route path="/contact" element={<Contact />}></Route>
+          <Route path="*" element={<NotFound />}></Route>
+        </Routes>
+        <Footer />
+      </ThemeContext.Provider>
     </>
   );
 }
