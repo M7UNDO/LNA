@@ -5,7 +5,7 @@
   justify-content: center;
 }
 
-.services-container {
+.services-holder {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   gap: 2rem;
@@ -58,13 +58,13 @@
 
 
 @media screen and (max-width: 1200px) {
-  .services-container {
+  .services-holder {
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   }
 }
 
 @media screen and (max-width: 768px) {
-  .services-container {
+  .services-holder {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }

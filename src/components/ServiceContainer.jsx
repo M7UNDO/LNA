@@ -24,7 +24,7 @@ export default function ServiceContainer() {
 
   return (
     <section className="services-section">
-      <div className="services-container" ref={container}>
+      <div className="services-holder" ref={container}>
         {servicesData.map((service, index) => (
           <ServiceCard 
            key={index} 

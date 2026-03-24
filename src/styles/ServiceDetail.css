@@ -18,6 +18,34 @@
   opacity: 0.8;
 }
 
+.service-intro{
+  font-size:1.7rem;
+  margin-bottom:1.5rem;
+  font-weight:500;
+}
+
+.service-description{
+  font-size:1.6rem;
+  margin-bottom:2rem;
+}
+
+.service-detail h2{
+  margin-top:3rem;
+  margin-bottom:1.5rem;
+  font-size:2rem;
+}
+
+.service-list{
+  padding-left:20px;
+  margin-bottom:2rem;
+}
+
+.service-list li{
+  font-size:1.6rem;
+  margin-bottom:0.8rem;
+  line-height:1.6;
+}
+
 .back-link {
   display: inline-block;
   font-size: 1.6rem;
@@ -25,3 +53,4 @@
   color: var(--accent-colour);
   text-decoration: none;
 }
+
