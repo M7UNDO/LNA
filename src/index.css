@@ -1,13 +1,13 @@
 :root {
   --primary-colour: #cacaca;
   --accent-colour: #3960ad;
+  --accent-colour-hover: #4784ff;
   --background-colour: rgb(229, 229, 229);
   --background-light: rgb(255, 255, 255);
   --typography-colour: #333d47;
 
-  /*fonts*/
-  --primary-font: "Satoshi", sans-serif;
-  --secondary-font: "PP Neue Montreal", sans-serif;
+  --primary-font: "Lato", sans-serif;
+  --secondary-font: "DM Sans", sans-serif;
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -80,4 +80,3 @@ h2 {
   line-height: 3rem;
   text-align: center;
 }
-
