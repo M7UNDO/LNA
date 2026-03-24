@@ -1,3 +1,7 @@
+.menu-toggle {
+  display: none;
+}
+
 .navbar {
   position: sticky;
   top: 0;
@@ -16,9 +20,24 @@
   z-index: 99;
 }
 
+.nav-menu {
+  height: 6rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-colour);
+  color: var(--typography-colour);
+  gap: 3rem;
+  font-size: 1.6rem;
+  z-index: 99;
+}
+
 .navlinks {
+  font-family: var(--primary-font);
   height: 100%;
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 1rem;
   padding: 1rem;
@@ -45,7 +64,7 @@
   bottom: -1rem;
   width: 100%;
   height: 0.3rem;
-  background-color: var(--accent-colour);
+  background-color: var(--accent-colour-hover);
 
   transform: scaleX(0);
   transform-origin: left;
@@ -57,12 +76,11 @@
 }
 
 .navlinks a:hover {
-  color: var(--accent-colour);
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); 
+  color: var(--accent-colour-hover);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .nav-logo {
-  height: 100%;
   width: fit-content;
   display: flex;
   align-items: center;
@@ -81,10 +99,180 @@
   transition: all 0.2s ease;
 }
 
-.nav-logo a:hover{
+.nav-logo a:hover {
   transform: scale(1.1);
-
 }
 .navlinks a.active {
-  color: var(--accent-colour);
+  color: var(--accent-colour-hover);
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(10px);
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 99;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+@media screen and (max-width: 768px) {
+  .overlay {
+    display: block;
+  }
+  .navbar {
+    border-bottom: 1.5px solid rgba(128, 128, 128, 0.47);
+    box-shadow: none;
+  }
+  .navlinks a::after {
+    content: none;
+  }
+
+  .menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 100;
+    display: block;
+    padding: 1rem;
+  }
+
+  .menu-lines {
+    width: 3rem;
+    height: 2px;
+    background: var(--typography-colour);
+    position: relative;
+    display: block;
+    transition: all 0.3s ease;
+  }
+
+  .menu-lines::before,
+  .menu-lines::after {
+    content: "";
+    position: absolute;
+    width: 3rem;
+    height: 2px;
+    background: var(--typography-colour);
+    left: 0;
+    transition: all 0.3s ease;
+  }
+
+  .menu-lines::before {
+    top: -8px;
+  }
+
+  .menu-lines::after {
+    top: 8px;
+  }
+
+  .menu-open .menu-lines {
+    background: transparent;
+  }
+
+  .menu-open .menu-lines::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .menu-open .menu-lines::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 6rem;
+    left: 0;
+    height: 100%;
+    width: 70%;
+    max-width: 35rem;
+    background-color: var(--background-colour);
+    display: flex;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 8rem;
+    z-index: 98;
+  }
+
+  .nav-menu.active {
+    transform: translateX(0);
+  }
+
+  .nav-menu .nav-logo {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .nav-menu .nav-logo img {
+    padding: 0.5rem;
+    height: auto;
+    width: 10rem;
+  }
+
+  .nav-menu .nav-logo a {
+    color: var(--typography-colour);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .nav-menu .nav-logo a:hover {
+    transform: scale(1.1);
+  }
+
+  .navlinks {
+    height: fit-content;
+    width: 100%;
+    font-family: var(--primary-font);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .navlinks a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    color: var(--typography-colour);
+    text-align: center;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.8rem;
+  }
+
+  .navlinks a:hover {
+    color: var(--accent-colour-hover);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  .navlinks a.active {
+    color: var(--accent-colour-hover);
+  }
+
+  .navlinks .theme-toggle {
+    margin-top: 1rem;
+  }
 }

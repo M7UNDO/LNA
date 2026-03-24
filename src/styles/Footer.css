@@ -1,7 +1,9 @@
 .footer {
-  color: var(--typography-colour);
+  font-family: var(--primary-font);
+  color: var(--typography-colour-light);
   padding: 3rem 8%;
-  border-top: 1.5px solid var(--accent-colour);
+  border-top: 2px solid var(--background-light);
+  background-color: rgb(28, 28, 30);
 }
 
 .logo{
@@ -18,12 +20,7 @@
   grid-template-columns: 2fr 1.5fr 2fr 1fr;
   gap: 4rem;
   padding-bottom: 40px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.footer-brand h2 {
-  font-size: 22px;
-  letter-spacing: 1px;
+  border-bottom: 1px solid var(--typography-colour-light);
 }
 
 .footer-tagline {
@@ -33,8 +30,7 @@
 }
 
 .footer-founder {
-  font-size: 14px;
-  opacity: 0.8;
+  font-size: 1.4rem;
 }
 
 .footer-contact h4,
@@ -42,14 +38,14 @@
 .footer-social h4 {
   font-size: 1.6rem;
   margin-bottom: 1rem;
-  color: var(--typography-colour);
+  color:var(--typography-colour-light);
 }
 
 .footer-contact p, .footer-contact a{
   font-size: 1.4rem;
   margin-bottom: 0.6rem;
   text-decoration: none;
-  color: var(--typography-colour);
+  color: var(--typography-colour-light);
 }
 
 .footer-contact a:hover{
@@ -79,13 +75,13 @@
 
 .social-icons a {
   text-decoration: none;
-  color: var(--typography-colour);
-  font-size: 2rem;
+  color:var(--typography-colour-light);
+  font-size: 2.5rem;
   transition: color 0.3s;
 }
 
 .social-icons a:hover {
-  color: var(--accent-colour);
+  color: var(--accent-colour-hover);
 }
 
 .footer-bottom {
@@ -104,14 +100,75 @@
 
 .footer-links a {
   text-decoration: none;
-  color: var(--typography-colour);
+  color: var(--typography-colour-light);
   transition: color 0.3s;
 }
 
 .footer-links a:hover {
-  color: var(--accent-colour);
+  color: var(--accent-colour-light);
 }
 
 .footer-links span {
   opacity: 0.4;
 }
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .footer {
+    padding: 1.5rem 5%;
+  }
+
+  .footer-top {
+    gap: 1.5rem;
+    padding-bottom: 15px;
+  }
+
+  .footer-contact p,
+  .footer-contact a,
+  .footer-services li {
+    margin-bottom: 0.3rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+    padding: 2rem 4%;
+  }
+
+  .logo {
+    width: 7rem;
+  }
+
+  .footer-top {
+    gap: 1.8rem;
+    padding-bottom: 20px;
+  }
+
+  .footer-tagline {
+    font-size: 0.85rem;
+  }
+
+  .footer-founder {
+    font-size: 1.1rem;
+  }
+
+  .footer-contact h4,
+  .footer-services h4,
+  .footer-social h4 {
+    font-size: 1.3rem;
+  }
+
+  .footer-contact p,
+  .footer-contact a,
+  .footer-services li {
+    font-size: 1.1rem;
+  }
+
+  .social-icons a {
+    font-size: 1.8rem;
+  }
+
+  .footer-bottom {
+    font-size: 11px;
+  }
+}
+
+/* Landscape Mode Optimization */

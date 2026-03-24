@@ -6,7 +6,7 @@ export const servicesData = [
     description: "Led by Mr Ngengebule, focusing on Magistrates & High Court disputes including contractual, delictual, and enrichment cases."
   },
   {
-    icon: "work",
+    icon: "enterprise",
     title: "Labour Law & ADR",
     description: "Labour dispute resolution, employment compliance, contracts, retrenchments, and collective bargaining, headed by Mr Ngengebule."
   },
@@ -26,7 +26,7 @@ export const servicesData = [
     description: "Commercial, corporate, insolvency, property law, trusts, and due diligence services, led by Mr Ngengebule and Miss Tshabalala."
   },
   {
-    icon: "real_estate_agent",
+    icon: "crowdsource",
     title: "Trusts & Estates",
     description: "Financial security and succession planning including wills, estate planning, administration of estates, and trusts."
   },

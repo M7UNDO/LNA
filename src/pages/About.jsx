@@ -67,7 +67,7 @@ export default function About() {
         </section>
 
         <section className="about-section">
-          <h2>Core Values</h2>
+          <h2>Our Core Values</h2>
 
           <div className="values-grid">
             <div className="value">

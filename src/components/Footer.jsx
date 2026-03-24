@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="footer-container">
         <div className="footer-top">
           <div className="footer-brand">
-            <img className="logo" src={theme === "light"? LogoDark: LogoLight} alt="" />
+            <img className="logo" src={LogoLight} alt="" />
             <p className="footer-tagline">Justice. Integrity. Excellence.</p>
             <p className="footer-founder">Founded by Luvuyo Gavin Ayanda Ngengebule</p>
           </div>
