@@ -30,3 +30,21 @@
   height: 40rem;
   border: none;
 }
+
+@media screen and (max-width: 768px) {
+  #map-section {
+    padding: 5rem 4rem;
+  }
+
+  #map-section p {
+    font-size: 1.6rem;
+    color: var(--typography-colour);
+    opacity: 0.8;
+    margin-bottom: 3rem;
+  }
+
+  .map-wrapper {
+    width: 100%;
+    max-width: 100rem;
+  }
+}
