@@ -126,6 +126,10 @@
   pointer-events: all;
 }
 
+.nav-logo-mobile {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .overlay {
     display: block;
@@ -274,5 +278,45 @@
 
   .navlinks .theme-toggle {
     margin-top: 1rem;
+  }
+
+  .nav-logo-mobile {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-logo-mobile img {
+    padding: 0.5rem;
+    height: auto;
+    width: 8rem;
+    opacity: 0.8;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+
+  .menu-lines,
+  .menu-lines::before,
+  .menu-lines::afte {
+    width: 2rem;
+    height: 2px;
+    border-radius: 0.5rem;
+  }
+
+  .nav-logo-mobile {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-logo-mobile img {
+    padding: 0.5rem;
+    height: auto;
+    width: 8rem;
+    opacity: 0.8;
   }
 }

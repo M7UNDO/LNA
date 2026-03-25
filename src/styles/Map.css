@@ -48,3 +48,24 @@
     max-width: 100rem;
   }
 }
+
+@media screen and (max-width: 480px) {
+  #map-section {
+    padding: 5rem 2rem;
+  }
+
+  #map-section p {
+    font-size: 1.4rem;
+    color: var(--typography-colour);
+    opacity: 0.8;
+    margin-bottom: 3rem;
+  }
+
+  .map-wrapper {
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+

@@ -16,11 +16,11 @@ export default function LegalTeam() {
           </p>
           <div className="contact">
             <span class="material-symbols-outlined">call</span>
-            <a href="tel:+27829283961"> +27 82 928 3961</a>
+            <a href="tel:+27829283961" target="_blank"> +27 82 928 3961</a>
           </div>
           <div className="email">
             <span class="material-symbols-outlined">mail</span>
-            <a href="mailto:info@ngengebule.co.za"> info@ngengebule.co.za</a>
+            <a href="mailto:info@ngengebule.co.za" target="_blank"> info@ngengebule.co.za</a>
           </div>
         </div>
 
@@ -33,11 +33,11 @@ export default function LegalTeam() {
           </p>
           <div className="contact">
             <span class="material-symbols-outlined">call</span>
-            <a href="tel:+27614475504"> +27 61 447 5504</a>
+            <a href="tel:+27614475504" target="_blank"> +27 61 447 5504</a>
           </div>
           <div className="email">
             <span class="material-symbols-outlined">mail</span>
-            <a href="mailto:info@ngengebule.co.za"> info@ngengebule.co.za</a>
+            <a href="mailto:info@ngengebule.co.za" target="_blank"> info@ngengebule.co.za</a>
           </div>
         </div>
       </div>

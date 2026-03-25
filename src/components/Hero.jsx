@@ -20,8 +20,8 @@ const slidesData = [
     id: 2,
     title: "Legal Support You Can Trust",
     text: "From civil litigation and labour disputes to contract drafting, estate administration, divorce matters, and Road Accident Fund claims, our firm provides clear guidance and strong representation.",
-    button: "Explore Our Practice Areas",
-    page: "/services",
+    button: "Learn More About Us",
+    page: "/about",
     image: hero2,
   },
   {
@@ -48,6 +48,7 @@ export default function Hero() {
 
     let current = 0;
 
+
     const showSlide = (index) => {
       slides.forEach((slide, i) => {
         slide.classList.toggle("active", i === index);
@@ -56,7 +57,6 @@ export default function Hero() {
 
       const content = slides[index].querySelector(".hero-content");
 
-      // Kill previous animations (IMPORTANT)
       gsap.killTweensOf(content);
 
       gsap.fromTo(
@@ -84,20 +84,57 @@ export default function Hero() {
       intervalRef.current = setInterval(nextSlide, 6000);
     };
 
-    // Dot click (same as old logic)
     dots.forEach((dot, i) => {
       dot.addEventListener("click", () => {
         showSlide(i);
-        startInterval(); // reset timer
+        startInterval();
       });
     });
 
-    // Init
+
+    const swipeThreshold = 50;
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    const handleTouchStart = (e) => {
+      touchStartX = e.touches[0].clientX;
+    };
+
+    const handleTouchMove = (e) => {
+      touchEndX = e.touches[0].clientX;
+    };
+
+    const handleTouchEnd = () => {
+      const distance = touchStartX - touchEndX;
+
+      if (Math.abs(distance) < swipeThreshold) return;
+
+      if (distance > 0) {
+        nextSlide(); 
+      } else {
+        const prev = (currentRef.current - 1 + slides.length) % slides.length;
+        showSlide(prev);
+      }
+
+      startInterval(); 
+    };
+
+    const banner = document.getElementById("hero-banner");
+
+    banner.addEventListener("touchstart", handleTouchStart);
+    banner.addEventListener("touchmove", handleTouchMove);
+    banner.addEventListener("touchend", handleTouchEnd);
+
     showSlide(0);
     startInterval();
 
+
     return () => {
       clearInterval(intervalRef.current);
+
+      banner.removeEventListener("touchstart", handleTouchStart);
+      banner.removeEventListener("touchmove", handleTouchMove);
+      banner.removeEventListener("touchend", handleTouchEnd);
     };
   }, []);
 

@@ -50,7 +50,7 @@ function Services() {
   return (
     <section className="services">
       <div className="services-container">
-        {/* HEADER */}
+
         <div className="services-header">
           <h1>Our Legal Services</h1>
           <p>
@@ -60,7 +60,7 @@ function Services() {
           </p>
         </div>
 
-        {/* GRID */}
+  
         <div className="services-grid">
           {services.map((service) => (
             <Link to={`/services/${service.id}`} key={service.id} className="service-panel">

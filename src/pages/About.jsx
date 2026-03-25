@@ -1,8 +1,75 @@
+import {useRef, useEffect} from "react";
 import "../styles/About.css";
 import LegalTeam from "../components/LegalTeam";
 import ShinyOverlay from "../assets/backgrounds/Shiny-Overlay.svg";
+import {gsap} from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
+  useEffect(() => {
+
+    gsap.utils.toArray(".about-section").forEach((section, i) => {
+      gsap.fromTo(
+        section,
+        {opacity: 0, y: 50},
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          delay: i * 0.2,
+          scrollTrigger: {
+            trigger: section,
+            start: "top 90%",
+            toggleActions: "play none none none",
+          },
+        },
+      );
+    });
+
+    //about cards
+    gsap.utils.toArray(".about-card").forEach((card, i) => {
+      gsap.fromTo(
+        card,
+        {opacity: 0, y: 50},
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.2,
+          ease: "power2.out",
+          delay: i * 0.2,
+          scrollTrigger: {
+            trigger: card,
+            start: "top 90%",
+            toggleActions: "play none none none",
+          },
+        },
+      );
+    });
+
+
+    gsap.utils.toArray(".value").forEach((value, i) => {
+      gsap.fromTo(
+        value,
+        {opacity: 0, y: 50},
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.2,
+          ease: "power2.out",
+          delay: i * 0.2,
+          scrollTrigger: {
+            trigger: value,
+            start: "top 90%",
+            toggleActions: "play none none none",
+          },
+        },
+      );
+    });
+  }, []);
+
   return (
     <section className="about-page">
       <div className="about-hero" style={{backgroundImage: `url(${ShinyOverlay})`}}>

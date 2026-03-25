@@ -12,15 +12,19 @@ import NotFound from "./pages/NotFound";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Breadcrumb from "./components/Breadcrumb";
+import ScrollToTop from "./components/ScrollToTop"
 
 function App() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "light";
+  });
 
   return (
     <>
       <ThemeContext.Provider value={{theme, setTheme}}>
         <NavBar />
         <Breadcrumb />
+        <ScrollToTop/>
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/services" element={<Services />}></Route>

@@ -18,34 +18,31 @@
   border-radius: 1.6rem;
 }
 
-.contact-left h2{
-    text-align: left;
-    font-weight: 400;
+.contact-left h2 {
+  text-align: left;
 }
 
-.contact-detail{
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-
+.contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
-.contact-heading{
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+.contact-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.contact-detail span{
-    font-size: 2.5rem;
+.contact-detail span {
+  font-size: 2.5rem;
 }
 
-.contact-heading h3{
-    font-size: 1.4rem;
-    font-weight: 400;
-    text-align: left;
-    letter-spacing: 0.1rem;
-    
+.contact-heading h3 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-align: left;
+  letter-spacing: 0.1rem;
 }
 
 .contact-left .detail-block .label {
@@ -65,17 +62,17 @@
   padding: 2rem 0;
 }
 
-.value .contact-detail{
-    margin-bottom: 0.5rem;
+.value .contact-detail {
+  margin-bottom: 0.5rem;
 }
 
-.value a{
-    color: var(--accent-colour-hover);
-    text-decoration: none;
+.value a {
+  color: var(--accent-colour-hover);
+  text-decoration: none;
 }
 
-.value a:hover{
-    text-decoration: underline;
+.value a:hover {
+  text-decoration: underline;
 }
 
 /* Right Column (Form) */
@@ -131,19 +128,18 @@
   background-color: var(--background-colour);
 }
 
-.contact-inputs::placeholder{
-    color: var(--typography-colour);
-    opacity: 0.7;
+.contact-inputs::placeholder {
+  color: var(--typography-colour);
+  opacity: 0.7;
 }
 
-.contact-inputs:hover{
-    border: 1.5px solid var(--accent-colour-hover);
+.contact-inputs:hover {
+  border: 1.5px solid var(--accent-colour-hover);
 }
 
 .contact-inputs:focus {
   border: 1.5px solid var(--accent-colour);
   color: var(--typography-colour);
-
 }
 
 textarea.contact-inputs {
@@ -160,7 +156,6 @@ textarea.contact-inputs {
   padding-right: 2.4rem;
   cursor: pointer;
   color: var(--typography-colour);
-  
 }
 
 .select-line:focus {
@@ -202,10 +197,14 @@ button[type="submit"]:hover {
 /* Responsive */
 @media screen and (max-width: 1024px) {
   .contact-container {
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 3rem;
+    padding: 0;
   }
 
+  .contact-inputs-holder {
+    padding: 1rem;
+  }
   .contact-left,
   .contact-right {
     width: 100%;
@@ -218,7 +217,12 @@ button[type="submit"]:hover {
     padding: 2rem 1.6rem;
   }
 
-  .contact-right-title h2 {
-    font-size: 2rem;
+  .contact-left h2 {
+    font-size: 2.5rem;
+  }
+
+  .contact-left .detail-block .label {
+    font-size: 1.4rem;
+    line-height: 1.8;
   }
 }

@@ -67,6 +67,12 @@ function NavBar() {
             <ThemeToggle />
           </div>
         </div>
+
+        <div className="nav-logo-mobile">
+          <NavLink to="/" onClick={closeMenu}>
+            <img src={theme === "light" ? LogoDark : LogoLight} alt="Logo" />
+          </NavLink>
+        </div>
       </nav>
       <div className="overlay"></div>
     </>

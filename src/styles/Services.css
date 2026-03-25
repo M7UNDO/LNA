@@ -11,11 +11,10 @@
   flex-direction: column;
 }
 
-/* HEADER */
 .services-header {
   text-align: left;
   margin-bottom: 5rem;
-  max-width: 700px;
+  max-width: 70rem;
 }
 
 .services-header h1 {
@@ -31,15 +30,15 @@
   line-height: 1.7;
 }
 
-/* subtle divider (premium touch) */
 .services-header::after {
   content: "";
   display: block;
-  width: 60px;
+  width: 6rem;
   height: 4px;
   background: var(--accent-colour);
   margin-top: 2rem;
   opacity: 0.6;
+  border-radius: 1rem;
 }
 
 /* GRID (KEY FIX) */
@@ -50,7 +49,6 @@
   max-width: 1000px;
 }
 
-/* CARD */
 .service-panel {
   padding: 3rem 2.5rem;
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -67,7 +65,6 @@
   overflow: hidden;
   min-height: 320px;
 }
-
 
 .service-panel::before {
   content: "";
@@ -86,13 +83,11 @@
   letter-spacing: -0.01em;
 }
 
-
 .service-panel p {
   font-size: 1.45rem;
   opacity: 0.7;
   line-height: 1.7;
 }
-
 
 .service-link {
   font-size: 1.3rem;
@@ -102,7 +97,6 @@
   letter-spacing: 0.03em;
   transition: transform 0.3s ease;
 }
-
 
 .service-panel:hover {
   transform: translateY(-4px);
@@ -118,7 +112,6 @@
   transform: translateX(4px);
 }
 
-/* 📱 TABLET */
 @media (max-width: 992px) {
   .services {
     padding: 6rem 2rem;
@@ -130,7 +123,6 @@
   }
 }
 
-/* 📱 MOBILE */
 @media (max-width: 600px) {
   .services-header {
     margin-bottom: 4rem;
@@ -142,5 +134,26 @@
 
   .service-panel {
     padding: 2.5rem 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .services-header {
+    margin-bottom: 10rem;
+  }
+  .services-header p {
+    font-size: 1.6rem;
+    opacity: 0.65;
+    line-height: 1.8;
+  }
+
+  .service-grid {
+    gap: 5rem;
+  }
+
+  .service-panel p {
+    font-size: 1.4rem;
+    opacity: 0.7;
+    line-height: 1.8;
   }
 }

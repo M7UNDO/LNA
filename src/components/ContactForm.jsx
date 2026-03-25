@@ -42,7 +42,7 @@ export default function ContactForm() {
       {/* Left Column */}
       <div className="contact-left">
         <div className="detail-block">
-          <h2 className="label">Contact Details</h2>
+          <h2>Contact Details</h2>
           <div className="value">
             <div className="contact-detail">
               <span class="material-symbols-outlined">deskphone</span>

@@ -6,7 +6,7 @@
   background-color: rgb(28, 28, 30);
 }
 
-.logo{
+.logo {
   width: 10rem;
   height: auto;
 }
@@ -38,17 +38,18 @@
 .footer-social h4 {
   font-size: 1.6rem;
   margin-bottom: 1rem;
-  color:var(--typography-colour-light);
+  color: var(--typography-colour-light);
 }
 
-.footer-contact p, .footer-contact a{
+.footer-contact p,
+.footer-contact a {
   font-size: 1.4rem;
   margin-bottom: 0.6rem;
   text-decoration: none;
   color: var(--typography-colour-light);
 }
 
-.footer-contact a:hover{
+.footer-contact a:hover {
   color: var(--accent-colour);
 }
 
@@ -75,7 +76,7 @@
 
 .social-icons a {
   text-decoration: none;
-  color:var(--typography-colour-light);
+  color: var(--typography-colour-light);
   font-size: 2.5rem;
   transition: color 0.3s;
 }
@@ -111,6 +112,18 @@
 .footer-links span {
   opacity: 0.4;
 }
+@media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) {
+    .footer-top {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-brand {
+      grid-column: 1 / -1; /* span full row */
+    }
+  }
+}
+
 @media screen and (max-height: 600px) and (orientation: landscape) {
   .footer {
     padding: 1.5rem 5%;
@@ -147,7 +160,7 @@
   }
 
   .footer-founder {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .footer-contact h4,
@@ -159,7 +172,8 @@
   .footer-contact p,
   .footer-contact a,
   .footer-services li {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    line-height: 1.8;
   }
 
   .social-icons a {

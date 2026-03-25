@@ -1,11 +1,11 @@
 import "../styles/Footer.css";
 import LogoDark from "../assets/LNA_Logo.svg";
 import LogoLight from "../assets/LNA_Logo-light.svg";
-import { useContext } from "react";
+import {useContext} from "react";
 import ThemeContext from "../context/context";
 
 export default function Footer() {
-  const {theme, setTheme} = useContext(ThemeContext)
+  const {theme, setTheme} = useContext(ThemeContext);
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -25,21 +25,21 @@ export default function Footer() {
             <p>
               <strong>Phone:</strong>
               <br />
-              <a href="tel:+27829283961">+27 82 928 3961</a>
+              <a href="tel:+27829283961" target="_blank">+27 82 928 3961</a>
               <br />
-              <a href="tel:+27614475504">+27 61 447 5504</a>
+              <a href="tel:+27614475504" target="_blank">+27 61 447 5504</a>
             </p>
 
             <p>
               <strong>PBX:</strong>
               <br />
-              <a href="tel:+27120073884">+27 12 007 3884</a>
+              <a href="tel:+27120073884" target="_blank">+27 12 007 3884</a>
             </p>
 
             <p>
               <strong>Email:</strong>
               <br />
-              <a href="mailto:info@ngengebule.co.za">info@ngengebule.co.za</a>
+              <a href="mailto:info@ngengebule.co.za" target="_blank">info@ngengebule.co.za</a>
             </p>
           </div>
 
@@ -59,10 +59,10 @@ export default function Footer() {
           <div className="footer-social">
             <h4>Connect</h4>
             <div className="social-icons">
-              <a href="#">
+              <a href="https://wa.me/27829283961" target="_blank">
                 <i class="fi fi-brands-whatsapp"></i>
               </a>
-              <a href="#">
+              <a href="#" target="_blank">
                 <i class="fi fi-brands-linkedin"></i>
               </a>
             </div>
@@ -72,7 +72,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} Ngengebule Attorneys Inc. All rights reserved.</p>
 
-          <div className="footer-links">
+          {/* <div className="footer-links">
             <a href="#">Privacy Policy</a>
             <span>|</span>
             <a href="#">Terms of Service</a>
@@ -80,7 +80,7 @@ export default function Footer() {
             <a href="#">PAIA Manual</a>
             <span>|</span>
             <a href="#">Sitemap</a>
-          </div>
+          </div>*/}
         </div>
       </div>
     </footer>
