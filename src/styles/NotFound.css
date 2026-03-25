@@ -54,12 +54,11 @@
   margin-top: 1rem;
 }
 
-
 .btn-primary {
   padding: 1.2rem 2.4rem;
   border-radius: 999px;
-  background: var(--typography-colour);
-  color: #fff;
+  background-color: var(--typography-colour);
+  color: var(--background-colour);
   text-decoration: none;
   font-size: 1.4rem;
 }
@@ -73,7 +72,6 @@
   color: var(--typography-colour);
 }
 
-
 .notfound-right {
   flex: 1;
   display: flex;
@@ -85,7 +83,7 @@
   max-width: 320px;
   height: auto;
   object-fit: contain;
-  opacity: 0.5;
+  opacity: 0.2;
 }
 
 .notfound-image {
@@ -93,12 +91,15 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-
-/* 📱 MOBILE */
 @media (max-width: 768px) {
   .notfound-wrapper {
     flex-direction: column;
@@ -114,8 +115,15 @@
     justify-content: center;
   }
 
+  .notfound-image{
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+@media (max-width: 480px) {
   .notfound-graphic {
-    width: 220px;
-    height: 220px;
+    width: 15rem;
+    height: 15rem;
   }
 }

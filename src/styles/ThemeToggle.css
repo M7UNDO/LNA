@@ -24,12 +24,6 @@
   border: 2px solid var(--background-light);
 }
 
-.theme-btn:hover{
-  opacity: 1;
-  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.388);
-  
-}
-
 .theme-btn:hover.theme-btn span{
   opacity: 1;
 }
