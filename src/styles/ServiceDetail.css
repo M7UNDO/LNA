@@ -3,7 +3,7 @@
 }
 
 .service-detail-container {
-  max-width: 800px;
+  max-width: 80rem;
   margin: 0 auto;
 }
 
@@ -19,9 +19,8 @@
 }
 
 .service-intro{
-  font-size:1.7rem;
-  margin-bottom:1.5rem;
-  font-weight:500;
+  font-size:1.6rem;
+  margin-bottom: 8rem;
 }
 
 .service-description{
@@ -33,17 +32,22 @@
   margin-top:3rem;
   margin-bottom:1.5rem;
   font-size:2rem;
+  text-align: left;
 }
 
-.service-list{
-  padding-left:20px;
-  margin-bottom:2rem;
+.service-block{
+  margin-bottom: 8rem;
 }
 
-.service-list li{
+.service-block ul{
+  padding-left:2rem;
+}
+
+.service-block li{
   font-size:1.6rem;
   margin-bottom:0.8rem;
   line-height:1.6;
+  opacity: 0.8;
 }
 
 .back-link {

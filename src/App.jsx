@@ -1,4 +1,4 @@
-import {HashRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {useState} from "react";
 import ThemeContext from "./context/context";
 import ThemeToggle from "./components/ThemeToggle";

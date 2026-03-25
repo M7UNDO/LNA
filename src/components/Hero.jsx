@@ -1,90 +1,116 @@
-import { useState, useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import {useEffect, useRef} from "react";
+import {Link} from "react-router-dom";
+import {gsap} from "gsap";
 import "../styles/Hero.css";
 
 import hero1 from "../assets/hero/hennie-stander-uL_2nhIOvfM-unsplash.webp";
 import hero2 from "../assets/hero/pexels-nicola-barts-7927545.webp";
 import hero3 from "../assets/hero/rachel-martin-yHOhVzVRFMc-unsplash.webp";
 
+const slidesData = [
+  {
+    id: 1,
+    title: "Professional Legal Services Close to Home",
+    text: "Ngengebule Attorneys Inc provides reliable legal support to individuals, families, and businesses across Johannesburg and Gauteng. Situated within the jurisdiction of local courts, our firm also acts as correspondents for attorneys outside the jurisdiction for the receiving and serving of legal documents.",
+    button: "View Our Services",
+    page: "/services",
+    image: hero1,
+  },
+  {
+    id: 2,
+    title: "Legal Support You Can Trust",
+    text: "From civil litigation and labour disputes to contract drafting, estate administration, divorce matters, and Road Accident Fund claims, our firm provides clear guidance and strong representation.",
+    button: "Explore Our Practice Areas",
+    page: "/services",
+    image: hero2,
+  },
+  {
+    id: 3,
+    title: "Serving Our Community With Integrity",
+    text: "Founded by Luvuyo Gavin Ayanda Ngengebule, our firm combines professional legal expertise with a commitment to accessible and client-focused legal representation.",
+    button: "Contact Our Firm",
+    page: "/contact",
+    image: hero3,
+  },
+];
+
 export default function Hero() {
-  const [current, setCurrent] = useState(0);
-  const [loadedImages, setLoadedImages] = useState({});
-  const contentRef = useRef(null);
-
-  const slides = [
-    {
-      title: "Professional Legal Services Close to Home",
-      text: "Ngengebule Attorneys Inc provides reliable legal support to individuals, families, and businesses across Johannesburg and Gauteng. Situated within the jurisdiction of local courts, our firm also acts as correspondents for attorneys outside the jurisdiction for the receiving and serving of legal documents.",
-      button: "View Our Services",
-      image: hero1,
-    },
-    {
-      title: "Legal Support You Can Trust",
-      text: "From civil litigation and labour disputes to contract drafting, estate administration, divorce matters, and Road Accident Fund claims, our firm provides clear guidance and strong representation.",
-      button: "Explore Our Practice Areas",
-      image: hero2,
-    },
-    {
-      title: "Serving Our Community With Integrity",
-      text: "Founded by Luvuyo Gavin Ayanda Ngengebule, our firm combines professional legal expertise with a commitment to accessible and client-focused legal representation.",
-      button: "Contact Our Firm",
-      image: hero3,
-    },
-  ];
-
- 
-  useEffect(() => {
-    slides.forEach((slide, index) => {
-      const img = new Image();
-      img.src = slide.image;
-
-      img.onload = () => {
-        setLoadedImages((prev) => ({
-          ...prev,
-          [index]: true,
-        }));
-      };
-    });
-  }, []);
-
+  const slidesRef = useRef([]);
+  const dotsRef = useRef([]);
+  const intervalRef = useRef(null);
+  const currentRef = useRef(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 6000);
+    const slides = slidesRef.current;
+    const dots = dotsRef.current;
 
-    return () => clearInterval(interval);
-  }, []);
+    if (!slides.length) return;
 
-  useEffect(() => {
-    if (contentRef.current) {
+    let current = 0;
+
+    const showSlide = (index) => {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+        dots[i].classList.toggle("active", i === index);
+      });
+
+      const content = slides[index].querySelector(".hero-content");
+
+      // Kill previous animations (IMPORTANT)
+      gsap.killTweensOf(content);
+
       gsap.fromTo(
-        contentRef.current,
-        { autoAlpha: 0, y: 50 },
-        { duration: 1.2, autoAlpha: 1, y: 0, ease: "power3.out" }
+        content,
+        {autoAlpha: 0, y: 50},
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 1.2,
+          ease: "power3.out",
+        },
       );
-    }
-  }, [current]);
+
+      current = index;
+      currentRef.current = index;
+    };
+
+    const nextSlide = () => {
+      const next = (currentRef.current + 1) % slides.length;
+      showSlide(next);
+    };
+
+    const startInterval = () => {
+      clearInterval(intervalRef.current);
+      intervalRef.current = setInterval(nextSlide, 6000);
+    };
+
+    // Dot click (same as old logic)
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        showSlide(i);
+        startInterval(); // reset timer
+      });
+    });
+
+    // Init
+    showSlide(0);
+    startInterval();
+
+    return () => {
+      clearInterval(intervalRef.current);
+    };
+  }, []);
 
   return (
     <section id="hero-banner">
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className={`hero-slide ${
-            index === current && loadedImages[index] ? "active" : ""
-          }`}
-        >
-          <div
-            className="hero-content"
-            ref={index === current ? contentRef : null}
-          >
+      {slidesData.map((slide, index) => (
+        <div key={slide.id} className="hero-slide" ref={(el) => (slidesRef.current[index] = el)}>
+          <div className="hero-content">
             <h1>{slide.title}</h1>
             <p>{slide.text}</p>
-
-            <a href="#" className="cta-btn">
+            <Link to={slide.page} className="cta-btn">
               {slide.button}
-            </a>
+            </Link>
           </div>
 
           <div className="banner-overlay"></div>
@@ -93,18 +119,14 @@ export default function Hero() {
             className="hero-bg"
             src={slide.image}
             alt=""
-            decoding="async"
+            loading={index === 0 ? "eager" : "eager"} // 🔥 preload all (important)
           />
         </div>
       ))}
 
       <div className="hero-dots">
-        {slides.map((_, index) => (
-          <span
-            key={index}
-            className={`dot ${index === current ? "active" : ""}`}
-            onClick={() => setCurrent(index)}
-          ></span>
+        {slidesData.map((_, index) => (
+          <button key={index} className="dot" ref={(el) => (dotsRef.current[index] = el)} />
         ))}
       </div>
     </section>

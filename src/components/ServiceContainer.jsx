@@ -1,36 +1,34 @@
-import {useRef} from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
-import { useGSAP } from '@gsap/react';
-import {servicesData} from "../data/services";
+import { useGSAP } from "@gsap/react";
+import { servicesData } from "../data/services";
 import ServiceCard from "../components/ServiceCard";
 import "../styles/ServiceCard.css";
 
 gsap.registerPlugin(useGSAP);
 
 export default function ServiceContainer() {
-
   const container = useRef();
 
-  useGSAP(()=>{
+  useGSAP(() => {
     gsap.from(".service-card", {
       y: 50,
       opacity: 0,
-      ease: "power2.in",
+      ease: "power2.out", // small improvement
       stagger: 0.1,
-      
-    }); 
+    });
   }, { scope: container });
-
 
   return (
     <section className="services-section">
       <div className="services-holder" ref={container}>
-        {servicesData.map((service, index) => (
+        {servicesData.map((service) => (
           <ServiceCard 
-           key={index} 
-           icon={service.icon}
-           title={service.title}
-           description={service.description}
+            key={service.id}   
+            id={service.id}    
+            icon={service.icon}
+            title={service.title}
+            description={service.description}
           />
         ))}
       </div>
