@@ -51,7 +51,7 @@
 }
 
 .footer-contact a:hover, footer li a:hover {
-  color: var(--accent-colour-hover);
+  color: var(--accent-colour);
 }
 
 .footer-services ul {
@@ -83,7 +83,7 @@
 }
 
 .social-icons a:hover {
-  color: var(--accent-colour-hover);
+  color: var(--accent-colour);
 }
 
 .footer-bottom {

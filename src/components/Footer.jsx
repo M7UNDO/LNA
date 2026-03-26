@@ -19,10 +19,6 @@ export default function Footer() {
 
           <div className="footer-contact">
             <h4>Contact</h4>
-
-            <p>Spruitview, Johannesburg</p>
-            <p>Serving clients across Johannesburg</p>
-
             <p>
               <strong>Phone:</strong>
               <br />
