@@ -63,7 +63,7 @@ function Services() {
   
         <div className="services-grid">
           {services.map((service) => (
-            <Link to={`/services/${service.id}`} key={service.id} className="service-panel">
+            <Link to={`/practice-areas/${service.id}`} key={service.id} className="service-panel">
               <h3>{service.title}</h3>
               <p>{service.description}</p>
               <span className="service-link">Learn More →</span>
