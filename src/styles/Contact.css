@@ -194,12 +194,11 @@ button[type="submit"]:hover {
   transform: translateY(-0.2rem);
 }
 
-/* Responsive */
 @media screen and (max-width: 1024px) {
   .contact-container {
     flex-direction: column-reverse;
     gap: 3rem;
-    padding: 3rem;
+    padding: 0;
   }
 
   .contact-inputs-holder {
@@ -268,7 +267,8 @@ button[type="submit"]:hover {
     font-size: 2.5rem;
   }
 
-  .contact-left .detail-block .label {
+  .contact-left .detail-block .label, .details-holder a,
+.details-holder p {
     font-size: 1.4rem;
     line-height: 1.8;
   }
