@@ -12,8 +12,8 @@ const slidesData = [
     id: 1,
     title: "Professional Legal Services Close to Home",
     text: "Ngengebule Attorneys Inc provides reliable legal support to individuals, families, and businesses across Johannesburg and Gauteng. Situated within the jurisdiction of local courts, our firm also acts as correspondents for attorneys outside the jurisdiction for the receiving and serving of legal documents.",
-    button: "View Our Services",
-    page: "/services",
+    button: "View Our Practice Areas",
+    page: "/practice-areas",
     image: hero1,
   },
   {
@@ -112,7 +112,7 @@ export default function Hero() {
             className="hero-bg"
             src={slide.image}
             alt=""
-            loading={index === 0 ? "eager" : "eager"} // 🔥 preload all (important)
+            loading={index === 0 ? "eager" : "eager"} 
           />
         </div>
       ))}

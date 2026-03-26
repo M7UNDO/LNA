@@ -43,36 +43,32 @@ export default function ContactForm() {
       <div className="contact-left">
         <div className="detail-block">
           <h2>Contact Details</h2>
-          <div className="value">
+          <div className="details-holder">
             <div className="contact-detail">
-              <span class="material-symbols-outlined">deskphone</span>
+              <i className="fa-solid fa-location-dot"></i>
               <div className="contact-heading">
-                <h3>PBX Landline:</h3>
-                <a href="tel:+27120073884" target="_blank">
-                  +27 12 007 3884
-                </a>
+                <h3>Location</h3>
+                <p>1754 Thobejane Crescant Spruitview 1431 c/o 75 Xavier Road Crown Gardens Johannesburg South </p>
               </div>
             </div>
             <div className="contact-detail">
-              <span class="material-symbols-outlined">call</span>
+              <i className="fa-brands fa-square-whatsapp"></i>
               <div className="contact-heading">
-                <h3>Mr. Ngengebule</h3>
-                <a href="tel:+27829283961" target="_blank">
-                  +27 82 928 3961
-                </a>
+                <h3>Whatstapp</h3>
+                <a href="tel:+27829283961" target="_blank">+27 82 928 3961</a>
               </div>
             </div>
             <div className="contact-detail">
-              <span class="material-symbols-outlined">call</span>
+              <i className="fa-solid fa-phone"></i>
               <div className="contact-heading">
-                <h3>Ms. Tshabalala: </h3>
+                <h3>Phone</h3>
                 <a href="tel:+27614475504" target="_blank">
-                  +27 61 447 5504
+                  +27 82 928 3961 / +27 61 447 5504
                 </a>
               </div>
             </div>
             <div className="contact-detail">
-              <span class="material-symbols-outlined">mail</span>
+              <i className="fa-solid fa-envelope"></i>
               <div className="contact-heading">
                 <h3>Email:</h3>
                 <a href="mailto:info@ngengebule.co.za" target="_blank">
@@ -82,21 +78,8 @@ export default function ContactForm() {
             </div>
           </div>
         </div>
-
-        <div className="detail-block">
-          <h2 className="label">Physical Address:</h2>
-          <div className="value">
-            <span>1754 Thobejane Crescent</span>
-            <span>Spruitview</span>
-            <span>1431</span>
-            <span>c/o 75 Xavier Road</span>
-            <span>Crown Gardens</span>
-            <span>Johannesburg South</span>
-          </div>
-        </div>
       </div>
 
-      {/* Right Column (Form) */}
       <form action="https://api.web3forms.com/submit" method="POST" className="contact-right">
         <div className="contact-right-title">
           <h1>Contact Us</h1>
@@ -128,9 +111,7 @@ export default function ContactForm() {
             <option value="Trust Administration">Trust Administration</option>
           </select>
           <textarea name="message" placeholder="Your Message" className="contact-inputs" required />
-          <button type="submit">
-            Contact Us <i className="fa-solid fa-envelope"></i>
-          </button>
+          <button type="submit">Contact Us</button>
         </div>
       </form>
     </section>

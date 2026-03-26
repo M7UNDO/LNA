@@ -41,7 +41,6 @@
   border-radius: 1rem;
 }
 
-/* GRID (KEY FIX) */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

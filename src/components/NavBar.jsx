@@ -55,7 +55,7 @@ function NavBar() {
             <NavLink to="/" onClick={closeMenu} className={({isActive}) => (isActive ? "active" : "")}>
               Home
             </NavLink>
-            <NavLink to="/services" onClick={closeMenu} className={({isActive}) => (isActive ? "active" : "")}>
+            <NavLink to="/practice-areas" onClick={closeMenu} className={({isActive}) => (isActive ? "active" : "")}>
               Services
             </NavLink>
             <NavLink to="/about" onClick={closeMenu} className={({isActive}) => (isActive ? "active" : "")}>

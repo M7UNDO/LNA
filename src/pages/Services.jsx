@@ -52,7 +52,7 @@ function Services() {
       <div className="services-container">
 
         <div className="services-header">
-          <h1>Our Legal Services</h1>
+          <h1>Our Practice Areas</h1>
           <p>
             At Ngengebule Attorneys, we provide a comprehensive range of legal services designed to meet the needs of
             individuals, businesses and communities. Our approach combines deep legal expertise with a commitment to

@@ -35,7 +35,7 @@ function ServiceDetail() {
           <p>{service.whyChoose}</p>
         </div>
 
-        <Link to="/services" className="back-link">
+        <Link to="/practice-areas" className="back-link">
           ← Back to Services
         </Link>
 

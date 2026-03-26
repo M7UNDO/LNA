@@ -42,15 +42,16 @@
 }
 
 .footer-contact p,
-.footer-contact a {
+.footer-contact a, footer li a {
+  font-family: var(--tertiary-font);
   font-size: 1.4rem;
   margin-bottom: 0.6rem;
   text-decoration: none;
   color: var(--typography-colour-light);
 }
 
-.footer-contact a:hover {
-  color: var(--accent-colour);
+.footer-contact a:hover, footer li a:hover {
+  color: var(--accent-colour-hover);
 }
 
 .footer-services ul {

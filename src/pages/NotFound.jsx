@@ -23,7 +23,7 @@ function NotFound() {
               Go Home
             </Link>
 
-            <Link to="/services" className="btn-secondary">
+            <Link to="/practice-areas" className="btn-secondary">
               View Our Services
             </Link>
           </div>

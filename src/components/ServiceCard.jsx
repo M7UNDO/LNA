@@ -12,7 +12,7 @@ export default function ServiceCard({ id, icon, title, description, delay = 0 })
   useEffect(() => {
     gsap.fromTo(
       cardRef.current,
-      { opacity: 0, y: 50 }, // start values
+      { opacity: 0, y: 50 }, 
       {
         opacity: 1,
         y: 0,
@@ -20,8 +20,8 @@ export default function ServiceCard({ id, icon, title, description, delay = 0 })
         ease: "power2.out",
         delay: delay,
         scrollTrigger: {
-          trigger: cardRef.current, // animate when this card enters viewport
-          start: "top 90%",         // start animation slightly before fully in view
+          trigger: cardRef.current, 
+          start: "top 90%",         
           toggleActions: "play none none none",
         },
       }
@@ -29,7 +29,7 @@ export default function ServiceCard({ id, icon, title, description, delay = 0 })
   }, [delay]);
 
   return (
-    <Link to={`/services/${id}`} className="service-card" ref={cardRef}>
+    <Link to={`/practice-areas/${id}`} className="service-card" ref={cardRef}>
       <span className="material-symbols-outlined">{icon}</span>
       <h3>{title}</h3>
       <p>{description}</p>

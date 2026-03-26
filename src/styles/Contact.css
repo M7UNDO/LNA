@@ -6,7 +6,6 @@
   margin: 0 auto;
   justify-content: space-between;
   align-items: flex-start;
-  font-family: var(--primary-font);
 }
 
 .contact-left {
@@ -15,7 +14,7 @@
   flex-direction: column;
   gap: 3rem;
   padding: 3rem 2.5rem;
-  border-radius: 1.6rem;
+  font-family: var(--tertiary-font);
 }
 
 .contact-left h2 {
@@ -28,51 +27,51 @@
   gap: 1rem;
 }
 
+.details-holder {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem 1rem;
+}
+
+.details-holder a,
+.details-holder p {
+  font-size: 1.6rem;
+  color: var(--typography-colour);
+  opacity: 0.8;
+}
+
 .contact-heading {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.contact-detail span {
-  font-size: 2.5rem;
-}
-
 .contact-heading h3 {
   font-size: 1.4rem;
-  font-weight: 400;
+  line-height: 1.4rem;
+  font-weight: 700;
   text-align: left;
-  letter-spacing: 0.1rem;
 }
 
-.contact-left .detail-block .label {
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: var(--typography-colour);
-}
-
-.contact-left .detail-block .value {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  font-family: var(--secondary-font);
-  font-size: 1.4rem;
-  font-weight: 400;
-  color: var(--typography-colour);
-  padding: 2rem 0;
-}
-
-.value .contact-detail {
-  margin-bottom: 0.5rem;
-}
-
-.value a {
-  color: var(--accent-colour-hover);
+.contact-heading a {
+  font-family: var(--tertiary-font);
+  color: var(--accent-colour);
   text-decoration: none;
 }
 
-.value a:hover {
+.contact-heading a:hover {
+  color: var(--accent-colour-hover);
   text-decoration: underline;
+}
+
+.fa-solid {
+  font-size: 1.6rem;
+  color: var(--accent-colour);
+}
+.fa-brands {
+  font-size: 2rem;
+  color: var(--accent-colour);
 }
 
 /* Right Column (Form) */
@@ -81,12 +80,14 @@
   display: flex;
   flex-direction: column;
   background-color: var(--background-colour);
+  font-family: var(--primary-font);
 }
 
 .contact-inputs-holder {
   flex: 2;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2rem;
   padding: 3rem;
 }
@@ -114,13 +115,12 @@
   opacity: 0.8;
 }
 
-/* Inputs */
 .contact-inputs {
   width: 100%;
   padding: 1.5rem;
   font-family: var(--secondary-font);
   font-size: 1.4rem;
-  border: 1.5px solid rgb(184, 183, 183);
+  border: 0.1rem solid var(--typography-colour);
   color: var(--typography-colour);
   outline: none;
   border-radius: 1rem;
@@ -130,15 +130,15 @@
 
 .contact-inputs::placeholder {
   color: var(--typography-colour);
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 .contact-inputs:hover {
-  border: 1.5px solid var(--accent-colour-hover);
+  border: 1px solid var(--accent-colour-hover);
 }
 
 .contact-inputs:focus {
-  border: 1.5px solid var(--accent-colour);
+  border: 1px solid var(--accent-colour);
   color: var(--typography-colour);
 }
 
@@ -171,10 +171,10 @@ textarea.contact-inputs {
 
 button[type="submit"] {
   width: fit-content;
-  padding: 1.6rem 2rem;
+  padding: 1.6rem 10rem;
   font-family: var(--secondary-font);
   font-size: 1.6rem;
-  background-color: var(--accent-colour);
+  background-color: var(--accent-colour-hover);
   color: #fff;
   border: none;
   border-radius: 1rem;
@@ -189,7 +189,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: var(--accent-colour-hover);
+  background-color: var(--accent-colour);
   box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.17);
   transform: translateY(-0.2rem);
 }
@@ -199,7 +199,7 @@ button[type="submit"]:hover {
   .contact-container {
     flex-direction: column-reverse;
     gap: 3rem;
-    padding: 0;
+    padding: 3rem;
   }
 
   .contact-inputs-holder {
@@ -208,6 +208,53 @@ button[type="submit"]:hover {
   .contact-left,
   .contact-right {
     width: 100%;
+  }
+
+  .contact-left h2 {
+    text-align: left;
+  }
+
+  .contact-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .details-holder {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem 1rem;
+  }
+
+  .details-holder a,
+  .details-holder p {
+    font-size: 1.6rem;
+    color: var(--typography-colour);
+    opacity: 0.8;
+  }
+
+  .contact-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .contact-heading h3 {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+  }
+
+  .details-holder a,
+  .details-holder p {
+    font-size: 1.8rem;
+  }
+
+  .fa-solid {
+    font-size: 2rem;
+  }
+  .fa-brands {
+    font-size: 2.4rem;
   }
 }
 
