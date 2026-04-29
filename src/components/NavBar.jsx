@@ -15,7 +15,6 @@ function NavBar() {
     setMenuOpen(false);
   }, [location]);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = "hidden";

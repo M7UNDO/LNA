@@ -25,10 +25,6 @@ export default function Footer() {
               <a href="tel:+27829283961" target="_blank">
                 +27 82 928 3961
               </a>
-              <br />
-              <a href="tel:+27614475504" target="_blank">
-                +27 61 447 5504
-              </a>
             </p>
 
             <p>

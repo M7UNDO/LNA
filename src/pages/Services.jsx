@@ -6,7 +6,7 @@ const services = [
     id: "civil-litigation",
     title: "Civil Litigation",
     description:
-      "Our Civil Litigation department is one of the firm’s strongest practice areas, providing strategic and results-driven representation in both the Magistrates Court and High Court. We handle a wide range of disputes, including contractual, delictual and commercial matters, with a focus on achieving efficient and favourable outcomes. With a deep understanding of legal processes and a competitive approach, we ensure that our clients’ interests are protected at every stage of litigation.",
+      "Our Civil Litigation department is one of the firm's strongest practice areas, providing strategic and results-driven representation in both the Magistrates Court and High Court. We handle a wide range of disputes, including contractual, delictual and commercial matters, with a focus on achieving efficient and favourable outcomes. With a deep understanding of legal processes and a competitive approach, we ensure that our clients’ interests are protected at every stage of litigation.",
   },
   {
     id: "labour-law",
@@ -66,7 +66,7 @@ function Services() {
             <Link to={`/practice-areas/${service.id}`} key={service.id} className="service-panel">
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-              <span className="service-link">Learn More →</span>
+              <span className="service-link">Learn More</span>
             </Link>
           ))}
         </div>

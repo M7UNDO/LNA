@@ -3,14 +3,14 @@
   --accent-colour: #3960ad;
   --accent-colour-hover: #346bd9;
   --accent-colour-transparent: #346bd934;
-  --background-colour: rgb(245, 245, 245);
+  --background-colour: rgb(226, 229, 238);
   --background-light: rgb(255, 255, 255);
   --typography-colour: #333d47;
-  --typography-colour-light: rgba(176, 176, 176, 0.77);
+  --typography-colour-light: rgb(176, 176, 176);
 
   --primary-font: "Lato", sans-serif;
-  --secondary-font: "DM Sans", sans-serif;
-  --tertiary-font: "Source Sans 3", sans-serif;
+  --secondary-font: "Source Sans 3", sans-serif;
+  --tertiary-font: "DM Sans", sans-serif;
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -72,29 +72,29 @@ body {
   margin: 0;
 }
 
+h1,h2,h3,h4{
+  font-family: var(--secondary-font);
+}
+
 h1 {
-  font-family: var(--primary-font);
   font-size: 4.2em;
   line-height: 5rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 h2 {
-  font-family: var(--primary-font);
   font-size: 2.5rem;
   font-weight: 400;
   line-height: 3rem;
   text-align: center;
 }
 h3 {
-  font-family: var(--primary-font);
   font-size: 2.5rem;
   font-weight: 400;
   line-height: 3rem;
 }
 
 h4 {
-  font-family: var(--primary-font);
   font-size: 2rem;
   font-weight: 500;
   line-height: 2.4rem;

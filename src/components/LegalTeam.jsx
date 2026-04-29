@@ -31,10 +31,6 @@ export default function LegalTeam() {
           <p>
             Consultant attorney, conveyancer, and notary, she advises clients on property transfers, estate administration, and notarial matters, ensuring smooth and legally compliant transactions.
           </p>
-          <div className="contact">
-            <span class="material-symbols-outlined">call</span>
-            <a href="tel:+27614475504" target="_blank"> +27 61 447 5504</a>
-          </div>
           <div className="email">
             <span class="material-symbols-outlined">mail</span>
             <a href="mailto:info@ngengebule.co.za" target="_blank"> info@ngengebule.co.za</a>
