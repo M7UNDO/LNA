@@ -210,6 +210,17 @@ button[type="submit"]:focus {
   outline-offset: 0.3rem;
 }
 
+.form-error {
+  color: #b00020;
+  font-size: 1.3rem;
+  margin-top: 0.6rem;
+  font-weight: 500;
+}
+
+.contact-inputs:focus {
+  outline: 0.2rem solid rgba(176, 0, 32, 0.25);
+}
+
 @media screen and (max-width: 1024px) {
   .contact-container {
     flex-direction: column-reverse;

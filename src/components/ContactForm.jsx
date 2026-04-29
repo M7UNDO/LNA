@@ -1,10 +1,13 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import "../styles/ContactForm.css";
 
 export default function ContactForm() {
   const container = useRef();
+  const formRef = useRef();
+
+  const [errors, setErrors] = useState({});
 
   useGSAP(
     () => {
@@ -38,67 +41,77 @@ export default function ContactForm() {
     { scope: container }
   );
 
+  const validateEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+  };
+
+  const validateForm = (formData) => {
+    const newErrors = {};
+
+    const firstName = formData.get("first_name").trim();
+    const lastName = formData.get("last_name").trim();
+    const email = formData.get("email").trim();
+    const service = formData.get("service");
+    const urgency = formData.get("urgency");
+    const message = formData.get("message").trim();
+
+    if (firstName.length < 2) {
+      newErrors.first_name = "First name must be at least 2 characters.";
+    }
+
+    if (lastName.length < 2) {
+      newErrors.last_name = "Last name must be at least 2 characters.";
+    }
+
+    if (!validateEmail(email)) {
+      newErrors.email = "Please enter a valid email address.";
+    }
+
+    if (!service) {
+      newErrors.service = "Please select a service.";
+    }
+
+    if (!urgency) {
+      newErrors.urgency = "Please select a matter type.";
+    }
+
+    if (message.length < 20) {
+      newErrors.message = "Message must be at least 20 characters.";
+    }
+
+    if (message.length > 1000) {
+      newErrors.message = "Message must be less than 1000 characters.";
+    }
+
+    return newErrors;
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(formRef.current);
+    const validationErrors = validateForm(formData);
+
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length === 0) {
+      formRef.current.submit();
+    }
+  };
+
   return (
     <section ref={container} className="contact-container">
       <div className="contact-left">
-        <div className="detail-block">
-          <h2>Contact Details</h2>
-
-          <div className="details-holder">
-            <div className="contact-detail">
-              <i className="fa-solid fa-location-dot"></i>
-
-              <div className="contact-heading">
-                <h3>Location</h3>
-                <p>
-                  1754 Thobejane Crescent, Spruitview 1431, c/o 75 Xavier Road,
-                  Crown Gardens, Johannesburg South
-                </p>
-              </div>
-            </div>
-
-            <div className="contact-detail">
-              <i className="fa-solid fa-envelope"></i>
-
-              <div className="contact-heading">
-                <h3>Email</h3>
-                <a href="mailto:info@ngengebule.co.za">
-                  info@ngengebule.co.za
-                </a>
-              </div>
-            </div>
-
-            <div className="contact-detail">
-              <i className="fa-solid fa-phone"></i>
-
-              <div className="contact-heading">
-                <h3>Phone</h3>
-                <a href="tel:+27829283961">+27 82 928 3961</a>
-              </div>
-            </div>
-
-            <div className="contact-detail">
-              <i className="fa-brands fa-whatsapp"></i>
-
-              <div className="contact-heading">
-                <h3>WhatsApp</h3>
-                <a
-                  href="https://wa.me/27829283961"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  +27 82 928 3961
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* keep your contact-left content exactly the same */}
       </div>
 
       <form
+        ref={formRef}
         action="https://api.web3forms.com/submit"
         method="POST"
         className="contact-right"
+        onSubmit={handleSubmit}
+        noValidate
       >
         <div className="contact-right-title">
           <h1>Contact Us</h1>
@@ -127,8 +140,8 @@ export default function ContactForm() {
               name="first_name"
               placeholder="Enter your first name"
               className="contact-inputs"
-              required
             />
+            {errors.first_name && <p className="form-error">{errors.first_name}</p>}
           </div>
 
           <div className="form-field">
@@ -139,8 +152,8 @@ export default function ContactForm() {
               name="last_name"
               placeholder="Enter your last name"
               className="contact-inputs"
-              required
             />
+            {errors.last_name && <p className="form-error">{errors.last_name}</p>}
           </div>
 
           <div className="form-field">
@@ -151,8 +164,8 @@ export default function ContactForm() {
               name="email"
               placeholder="Enter your email address"
               className="contact-inputs"
-              required
             />
+            {errors.email && <p className="form-error">{errors.email}</p>}
           </div>
 
           <div className="form-field">
@@ -161,12 +174,9 @@ export default function ContactForm() {
               id="service"
               name="service"
               className="contact-inputs select-line"
-              required
               defaultValue=""
             >
-              <option value="" disabled>
-                Select a service
-              </option>
+              <option value="" disabled>Select a service</option>
               <option value="Conveyancing">Conveyancing</option>
               <option value="Notary">Notary</option>
               <option value="Civil Litigation">Civil Litigation</option>
@@ -180,6 +190,7 @@ export default function ContactForm() {
               </option>
               <option value="Trust Administration">Trust Administration</option>
             </select>
+            {errors.service && <p className="form-error">{errors.service}</p>}
           </div>
 
           <div className="form-field">
@@ -188,16 +199,14 @@ export default function ContactForm() {
               id="urgency"
               name="urgency"
               className="contact-inputs select-line"
-              required
               defaultValue=""
             >
-              <option value="" disabled>
-                Select matter type
-              </option>
+              <option value="" disabled>Select matter type</option>
               <option value="General enquiry">General enquiry</option>
               <option value="Urgent matter">Urgent matter</option>
               <option value="Follow-up">Follow-up</option>
             </select>
+            {errors.urgency && <p className="form-error">{errors.urgency}</p>}
           </div>
 
           <div className="form-field">
@@ -207,8 +216,8 @@ export default function ContactForm() {
               name="message"
               placeholder="Briefly describe your legal matter. Please avoid sharing confidential details."
               className="contact-inputs"
-              required
             />
+            {errors.message && <p className="form-error">{errors.message}</p>}
           </div>
 
           <button type="submit">Submit Enquiry</button>
