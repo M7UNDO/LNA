@@ -111,7 +111,7 @@ export default function ContactForm() {
 
               <div className="contact-heading">
                 <h3>Location</h3>
-                <p>1754 Thobejane Crescent, Spruitview 1431, c/o 75 Xavier Road, Crown Gardens, Johannesburg South</p>
+                <p>1754 Thobejane Crescent, Spruitview 1431</p>
               </div>
             </div>
 
