@@ -206,7 +206,7 @@ button[type="submit"]:hover {
 }
 
 button[type="submit"]:focus {
-  outline: 0.3rem solid rgba(176, 130, 59, 0.35);
+  outline: 0.3rem solid rgba(0, 94, 255, 0.35);
   outline-offset: 0.3rem;
 }
 
