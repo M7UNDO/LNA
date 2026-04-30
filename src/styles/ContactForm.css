@@ -14,7 +14,7 @@
   flex-direction: column;
   gap: 3rem;
   padding: 3rem 2.5rem;
-  font-family: var(--tertiary-font);
+  font-family: var(--primary-font);
 }
 
 .contact-left h2 {
@@ -278,6 +278,10 @@ button[type="submit"]:focus {
   .details-holder p {
     font-size: 1.4rem;
     line-height: 1.8;
+  }
+
+  .contact-left{
+    padding: 0 3rem;
   }
 
   .contact-right-title {

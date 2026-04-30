@@ -1,6 +1,6 @@
-import { useRef, useState } from "react";
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
+import {useRef, useState} from "react";
+import {gsap} from "gsap";
+import {useGSAP} from "@gsap/react";
 import "../styles/ContactForm.css";
 
 export default function ContactForm() {
@@ -38,7 +38,7 @@ export default function ContactForm() {
           ease: "power2.out",
         });
     },
-    { scope: container }
+    {scope: container},
   );
 
   const validateEmail = (email) => {
@@ -102,8 +102,51 @@ export default function ContactForm() {
   return (
     <section ref={container} className="contact-container">
       <div className="contact-left">
-        {/* keep your contact-left content exactly the same */}
+        <div className="detail-block">
+          <h2>Contact Details</h2>
+
+          <div className="details-holder">
+            <div className="contact-detail">
+              <i className="fa-solid fa-location-dot"></i>
+
+              <div className="contact-heading">
+                <h3>Location</h3>
+                <p>1754 Thobejane Crescent, Spruitview 1431, c/o 75 Xavier Road, Crown Gardens, Johannesburg South</p>
+              </div>
+            </div>
+
+            <div className="contact-detail">
+              <i className="fa-solid fa-envelope"></i>
+
+              <div className="contact-heading">
+                <h3>Email</h3>
+                <a href="mailto:info@ngengebule.co.za">info@ngengebule.co.za</a>
+              </div>
+            </div>
+
+            <div className="contact-detail">
+              <i className="fa-solid fa-phone"></i>
+
+              <div className="contact-heading">
+                <h3>Phone</h3>
+                <a href="tel:+27829283961">+27 82 928 3961</a>
+              </div>
+            </div>
+
+            <div className="contact-detail">
+              <i className="fa-brands fa-whatsapp"></i>
+
+              <div className="contact-heading">
+                <h3>WhatsApp</h3>
+                <a href="https://wa.me/27829283961" target="_blank" rel="noreferrer">
+                  +27 82 928 3961
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      <div className="contact-left">{/* keep your contact-left content exactly the same */}</div>
 
       <form
         ref={formRef}
@@ -118,19 +161,13 @@ export default function ContactForm() {
           <hr className="animated-hr" />
 
           <p>
-            We invite you to contact us through the form below. For your
-            security, please do not share confidential information here. Sending
-            a message through this form does not establish an attorney-client
-            relationship.
+            We invite you to contact us through the form below. For your security, please do not share confidential
+            information here. Sending a message through this form does not establish an attorney-client relationship.
           </p>
         </div>
 
         <div className="contact-inputs-holder">
-          <input
-            type="hidden"
-            name="access_key"
-            value="0db9ee02-e0bb-4070-854f-a01d4c7cbf17"
-          />
+          <input type="hidden" name="access_key" value="0db9ee02-e0bb-4070-854f-a01d4c7cbf17" />
 
           <div className="form-field">
             <label htmlFor="first_name">First Name</label>
@@ -170,21 +207,16 @@ export default function ContactForm() {
 
           <div className="form-field">
             <label htmlFor="service">Service Needed</label>
-            <select
-              id="service"
-              name="service"
-              className="contact-inputs select-line"
-              defaultValue=""
-            >
-              <option value="" disabled>Select a service</option>
+            <select id="service" name="service" className="contact-inputs select-line" defaultValue="">
+              <option value="" disabled>
+                Select a service
+              </option>
               <option value="Conveyancing">Conveyancing</option>
               <option value="Notary">Notary</option>
               <option value="Civil Litigation">Civil Litigation</option>
               <option value="Family Law">Family Law</option>
               <option value="Labour Law Disputes">Labour Law Disputes</option>
-              <option value="Deceased Estates & Estate Planning">
-                Deceased Estates & Estate Planning
-              </option>
+              <option value="Deceased Estates & Estate Planning">Deceased Estates & Estate Planning</option>
               <option value="Contractual Drafting and Dispute Resolution">
                 Contractual Drafting and Dispute Resolution
               </option>
@@ -195,13 +227,10 @@ export default function ContactForm() {
 
           <div className="form-field">
             <label htmlFor="urgency">Matter Type</label>
-            <select
-              id="urgency"
-              name="urgency"
-              className="contact-inputs select-line"
-              defaultValue=""
-            >
-              <option value="" disabled>Select matter type</option>
+            <select id="urgency" name="urgency" className="contact-inputs select-line" defaultValue="">
+              <option value="" disabled>
+                Select matter type
+              </option>
               <option value="General enquiry">General enquiry</option>
               <option value="Urgent matter">Urgent matter</option>
               <option value="Follow-up">Follow-up</option>

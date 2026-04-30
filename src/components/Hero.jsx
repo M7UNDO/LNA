@@ -48,14 +48,15 @@ export default function Hero() {
 
     let current = 0;
 
-
     const showSlide = (index) => {
       slides.forEach((slide, i) => {
-        slide.classList.toggle("active", i === index);
-        dots[i].classList.toggle("active", i === index);
+        slide?.classList.toggle("active", i === index);
+        dots[i]?.classList.toggle("active", i === index);
       });
 
-      const content = slides[index].querySelector(".hero-content");
+      const content = slides[index]?.querySelector(".hero-content");
+
+      if (!content) return;
 
       gsap.killTweensOf(content);
 
@@ -70,10 +71,9 @@ export default function Hero() {
         },
       );
 
-      current = index;
       currentRef.current = index;
     };
-
+    
     const nextSlide = () => {
       const next = (currentRef.current + 1) % slides.length;
       showSlide(next);
@@ -108,12 +108,7 @@ export default function Hero() {
 
           <div className="banner-overlay"></div>
 
-          <img
-            className="hero-bg"
-            src={slide.image}
-            alt=""
-            loading={index === 0 ? "eager" : "eager"} 
-          />
+          <img className="hero-bg" src={slide.image} alt="" loading={index === 0 ? "eager" : "eager"} />
         </div>
       ))}
 
