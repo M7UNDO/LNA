@@ -146,7 +146,6 @@ export default function ContactForm() {
           </div>
         </div>
       </div>
-      <div className="contact-left">{/* keep your contact-left content exactly the same */}</div>
 
       <form
         ref={formRef}
@@ -249,7 +248,7 @@ export default function ContactForm() {
             {errors.message && <p className="form-error">{errors.message}</p>}
           </div>
 
-          <button type="submit">Submit Enquiry</button>
+          <button type="submit" className="contact-btn">Submit Enquiry<i className="fa-solid fa-paper-plane"></i></button>
         </div>
       </form>
     </section>

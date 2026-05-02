@@ -67,12 +67,12 @@
 
 .fa-solid {
   font-size: 1.6rem;
-  color: var(--accent-colour);
+  color: var(--accent-colour-hover);
 }
 
 .fa-brands {
   font-size: 2rem;
-  color: var(--accent-colour);
+  color: var(--accent-colour-hover);
 }
 
 .contact-right {
@@ -147,13 +147,11 @@
 }
 
 .contact-inputs:hover {
-  border-color: var(--accent-colour-hover);
+  border-color: var(--accent-colour);
 }
 
 .contact-inputs:focus {
-  border-color: var(--accent-colour);
-  outline: 0.3rem solid var(--accent-colour-transparent);
-  outline-offset: 0.2rem;
+  border-color: var(--accent-colour-hover);
 }
 
 textarea.contact-inputs {
@@ -180,7 +178,7 @@ textarea.contact-inputs {
 
 button[type="submit"] {
   width: fit-content;
-  padding: 1.6rem 10rem;
+  padding: 1rem 8rem;
   font-family: var(--secondary-font);
   font-size: 1.6rem;
   background-color: var(--accent-colour-hover);
@@ -205,20 +203,15 @@ button[type="submit"]:hover {
   transform: translateY(-0.2rem);
 }
 
-button[type="submit"]:focus {
-  outline: 0.3rem solid rgba(0, 94, 255, 0.35);
-  outline-offset: 0.3rem;
+.contact-btn .fa-solid{
+  color: white;
 }
 
 .form-error {
-  color: #b00020;
+  color: #de0a31;
   font-size: 1.3rem;
   margin-top: 0.6rem;
   font-weight: 500;
-}
-
-.contact-inputs:focus {
-  outline: 0.2rem solid rgba(176, 0, 32, 0.25);
 }
 
 @media screen and (max-width: 1024px) {
