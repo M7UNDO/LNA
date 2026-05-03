@@ -166,7 +166,9 @@ export default function ContactForm() {
         </div>
 
         <div className="contact-inputs-holder">
-          <input type="hidden" name="access_key" value="0db9ee02-e0bb-4070-854f-a01d4c7cbf17" />
+          <input type="hidden" name="access_key" value="9c9900b5-b30b-4220-96ff-5750b9d78989" />
+          <input type="hidden" name="subject" value="New Client Enquiry - Ngengebule Attorneys Website" />
+          <input type="hidden" name="from_name" value="Ngengebule Attorneys Website" />
 
           <div className="form-field">
             <label htmlFor="first_name">First Name</label>
@@ -248,7 +250,9 @@ export default function ContactForm() {
             {errors.message && <p className="form-error">{errors.message}</p>}
           </div>
 
-          <button type="submit" className="contact-btn">Submit Enquiry<i className="fa-solid fa-paper-plane"></i></button>
+          <button type="submit" className="contact-btn">
+            Submit Enquiry<i className="fa-solid fa-paper-plane"></i>
+          </button>
         </div>
       </form>
     </section>
