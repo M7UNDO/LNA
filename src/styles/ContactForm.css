@@ -75,6 +75,19 @@
   color: var(--accent-colour-hover);
 }
 
+.contact-icon {
+  background-color: var(--icon-bg);
+  border: none;
+  border-radius: 0.5rem;
+  width: 4.4rem;
+  height: 4.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-colour);
+  flex-shrink: 0;
+}
+
 .contact-right {
   flex: 2;
   display: flex;
@@ -141,6 +154,15 @@
   background-color: var(--background-colour);
 }
 
+.contact-inputs:-webkit-autofill,
+.contact-inputs:-webkit-autofill:hover,
+.contact-inputs:-webkit-autofill:focus,
+.contact-inputs:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px var(--background-colour) inset;
+  -webkit-text-fill-color: var(--typography-colour);
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 .contact-inputs::placeholder {
   color: var(--typography-colour);
   opacity: 0.55;
@@ -203,7 +225,7 @@ button[type="submit"]:hover {
   transform: translateY(-0.2rem);
 }
 
-.contact-btn .fa-solid{
+.contact-btn .fa-solid {
   color: white;
 }
 
@@ -273,7 +295,7 @@ button[type="submit"]:hover {
     line-height: 1.8;
   }
 
-  .contact-left{
+  .contact-left {
     padding: 0 3rem;
   }
 

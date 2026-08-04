@@ -1,11 +1,14 @@
-import {useEffect, useRef} from "react";
 import {Link} from "react-router-dom";
-import {gsap} from "gsap";
-import "../styles/Hero.css";
+import Slider from "react-slick";
 
-import hero1 from "../assets/hero/hennie-stander-uL_2nhIOvfM-unsplash.webp";
-import hero2 from "../assets/hero/pexels-nicola-barts-7927545.webp";
-import hero3 from "../assets/hero/rachel-martin-yHOhVzVRFMc-unsplash.webp";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import hero1 from "../assets/hero/hennie-stander-uL_2nhIOvfM-unsplash.jpg";
+import hero2 from "../assets/hero/pexels-nicola-barts-7927545.jpg";
+import hero3 from "../assets/hero/rachel-martin-yHOhVzVRFMc-unsplash.jpg";
+
+import "../styles/Hero.css";
 
 const slidesData = [
   {
@@ -15,6 +18,7 @@ const slidesData = [
     button: "View Our Practice Areas",
     page: "/practice-areas",
     image: hero1,
+    alt: "Grayscale photo of Johannesburg city buildings",
   },
   {
     id: 2,
@@ -23,6 +27,7 @@ const slidesData = [
     button: "Learn More About Us",
     page: "/about",
     image: hero2,
+    alt: "Close-up of a businessman's hand holding a briefcase",
   },
   {
     id: 3,
@@ -31,92 +36,54 @@ const slidesData = [
     button: "Contact Our Firm",
     page: "/contact",
     image: hero3,
+    alt: "People crossing on pedestrian lane near buildings",
   },
 ];
 
 export default function Hero() {
-  const slidesRef = useRef([]);
-  const dotsRef = useRef([]);
-  const intervalRef = useRef(null);
-  const currentRef = useRef(0);
-
-  useEffect(() => {
-    const slides = slidesRef.current;
-    const dots = dotsRef.current;
-
-    if (!slides.length) return;
-
-    let current = 0;
-
-    const showSlide = (index) => {
-      slides.forEach((slide, i) => {
-        slide?.classList.toggle("active", i === index);
-        dots[i]?.classList.toggle("active", i === index);
-      });
-
-      const content = slides[index]?.querySelector(".hero-content");
-
-      if (!content) return;
-
-      gsap.killTweensOf(content);
-
-      gsap.fromTo(
-        content,
-        {autoAlpha: 0, y: 50},
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 1.2,
-          ease: "power3.out",
-        },
-      );
-
-      currentRef.current = index;
-    };
-    
-    const nextSlide = () => {
-      const next = (currentRef.current + 1) % slides.length;
-      showSlide(next);
-    };
-
-    const startInterval = () => {
-      clearInterval(intervalRef.current);
-      intervalRef.current = setInterval(nextSlide, 6000);
-    };
-
-    dots.forEach((dot, i) => {
-      dot.addEventListener("click", () => {
-        showSlide(i);
-        startInterval();
-      });
-    });
-    showSlide(0);
-    startInterval();
-  }, []);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 9000,
+    arrows: false,
+    pauseOnHover: false,
+    swipeToSlide: true,
+    touchThreshold: 15,
+    cssEase: "cubic-bezier(0.25, 1, 0.5, 1)",
+    dotsClass: "slick-dots hero-dots",
+  };
 
   return (
     <section id="hero-banner">
-      {slidesData.map((slide, index) => (
-        <div key={slide.id} className="hero-slide" ref={(el) => (slidesRef.current[index] = el)}>
-          <div className="hero-content">
-            <h1>{slide.title}</h1>
-            <p>{slide.text}</p>
-            <Link to={slide.page} className="cta-btn">
-              {slide.button}
-            </Link>
+      <Slider {...settings}>
+        {slidesData.map((slide, index) => (
+          <div key={slide.id} className="hero-slide-wrapper">
+            <div className="hero-slide">
+              <div className="hero-content">
+                <h1>{slide.title}</h1>
+                <p>{slide.text}</p>
+                <Link to={slide.page} className="cta-btn">
+                  {slide.button}
+                </Link>
+              </div>
+
+              <div className="banner-overlay" />
+
+              <img
+                className="hero-bg"
+                src={slide.image}
+                alt={slide.alt}
+                loading={index === 0 ? "eager" : "lazy"}
+                decoding="async"
+              />
+            </div>
           </div>
-
-          <div className="banner-overlay"></div>
-
-          <img className="hero-bg" src={slide.image} alt="" loading={index === 0 ? "eager" : "eager"} />
-        </div>
-      ))}
-
-      <div className="hero-dots">
-        {slidesData.map((_, index) => (
-          <button key={index} className="dot" ref={(el) => (dotsRef.current[index] = el)} />
         ))}
-      </div>
+      </Slider>
     </section>
   );
 }

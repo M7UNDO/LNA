@@ -107,7 +107,9 @@ export default function ContactForm() {
 
           <div className="details-holder">
             <div className="contact-detail">
-              <i className="fa-solid fa-location-dot"></i>
+              <div className="contact-icon">
+                <i className="fa-solid fa-location-dot"></i>
+              </div>
 
               <div className="contact-heading">
                 <h3>Location</h3>
@@ -116,7 +118,9 @@ export default function ContactForm() {
             </div>
 
             <div className="contact-detail">
-              <i className="fa-solid fa-envelope"></i>
+              <div className="contact-icon">
+                <i className="fa-solid fa-envelope"></i>
+              </div>
 
               <div className="contact-heading">
                 <h3>Email</h3>
@@ -125,7 +129,9 @@ export default function ContactForm() {
             </div>
 
             <div className="contact-detail">
-              <i className="fa-solid fa-phone"></i>
+              <div className="contact-icon">
+                <i className="fa-solid fa-phone"></i>
+              </div>
 
               <div className="contact-heading">
                 <h3>Phone</h3>
@@ -134,7 +140,9 @@ export default function ContactForm() {
             </div>
 
             <div className="contact-detail">
-              <i className="fa-brands fa-whatsapp"></i>
+              <div className="contact-icon">
+                <i className="fa-brands fa-whatsapp"></i>
+              </div>
 
               <div className="contact-heading">
                 <h3>WhatsApp</h3>

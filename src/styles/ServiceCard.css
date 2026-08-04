@@ -12,6 +12,11 @@
   justify-items: stretch;
 }
 
+.service-card-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
 .service-card {
   font-family: var(--primary-font);
   height: 100%;
@@ -27,11 +32,12 @@
   text-decoration: none;
   border: 1px solid rgba(102, 101, 101, 0.258);
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .service-card:hover {
-  border: 1px solid var(--accent-colour-hover);
-  color: var(--accent-colour);
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.151);
+  transform: scale(1.025);
 }
 
 .service-card:hover.service-card .material-symbols-outlined {
@@ -40,7 +46,7 @@
 
 .service-card .material-symbols-outlined {
   font-size: 3rem;
-  color: var(--typography-colour);
+  color: var(--accent-colour);
   display: block;
   margin-bottom: 2rem;
 }

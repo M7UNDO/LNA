@@ -1,4 +1,5 @@
-import {Link} from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/Services.css";
 
 const services = [
@@ -46,33 +47,40 @@ const services = [
   },
 ];
 
-function Services() {
+export default function Services() {
   return (
     <section className="services">
       <div className="services-container">
-
-        <div className="services-header">
+        <header className="services-header">
           <h1>Our Practice Areas</h1>
           <p>
             At Ngengebule Attorneys, we provide a comprehensive range of legal services designed to meet the needs of
             individuals, businesses and communities. Our approach combines deep legal expertise with a commitment to
             integrity, efficiency and personalised service.
           </p>
-        </div>
+        </header>
 
-  
         <div className="services-grid">
           {services.map((service) => (
-            <Link to={`/practice-areas/${service.id}`} key={service.id} className="service-panel">
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-              <span className="service-link">Learn More</span>
-            </Link>
+            <article key={service.id} className="service-panel">
+              <h3 className="service-panel__title">{service.title}</h3>
+              <p className="service-panel__description">{service.description}</p>
+              
+              <div className="service-panel__footer">
+                <Link to={`/practice-areas/${service.id}`} className="service-panel__cta-button">
+                  <span className="service-panel__button-text">Learn More</span>
+                  <span className="service-panel__icon-wrapper" aria-hidden="true">
+                    <svg className="service-panel__arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </Link>
+              </div>
+            </article>
           ))}
         </div>
       </div>
     </section>
   );
 }
-
-export default Services;
