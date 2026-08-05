@@ -103,8 +103,6 @@ export default function ContactForm() {
     <section ref={container} className="contact-container">
       <div className="contact-left">
         <div className="detail-block">
-          <h2>Contact Details</h2>
-
           <div className="details-holder">
             <div className="contact-detail">
               <div className="contact-icon">

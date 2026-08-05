@@ -10,10 +10,12 @@
   --icon-bg: #5a91ff2f;
 
   --primary-font: "Lato", sans-serif;
-  --secondary-font: "Source Sans 3", sans-serif;
+  --secondary-font: 'PP Neue Montreal', sans-serif;
   --tertiary-font: "DM Sans", sans-serif;
+  --prata: "Prata", serif;
+  --playfair:  "Playfair Display", serif;
+  --open-san: "Open Sans", sans-serif;
 
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -67,14 +69,11 @@ a:hover {
 }*/
 
 body {
+  font-family: var(--primary-font);
   background-color: var(--background-colour);
   color: var(--typography-colour);
   width: 100%;
   margin: 0;
-}
-
-h1,h2,h3,h4{
-  font-family: var(--secondary-font);
 }
 
 h1 {

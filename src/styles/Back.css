@@ -1,0 +1,54 @@
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.6rem;
+  background: var(--accent-colour-hover);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.back-btn__text {
+  transform: translateX(-0.8rem);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.back-btn__icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  overflow: hidden;
+}
+
+.back-btn__arrow-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  transform: translateX(120%);
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.back-btn:hover {
+  background: var(--accent-colour-hover, rgba(255, 255, 255, 0.08));
+  border-color: var(--accent-colour, rgba(255, 255, 255, 0.3));
+  color: white;
+}
+
+.back-btn:hover .back-btn__text {
+  transform: translateX(0);
+}
+
+.back-btn:hover .back-btn__arrow-icon {
+  transform: translateX(0);
+  opacity: 1;
+}

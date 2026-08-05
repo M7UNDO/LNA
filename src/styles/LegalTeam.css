@@ -1,0 +1,81 @@
+
+.profile {
+  width: 10rem;
+  height: 10rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 1rem;
+}
+
+.team-member {
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.team-member h3 {
+  font-size: 1.8rem;
+}
+
+.role {
+  color: var(--accent-colour);
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.contact,
+.email {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.6rem;
+  color: var(--accent-colour);
+  margin-top: 1rem;
+}
+
+.contact a,
+.email a {
+  color: var(--accent-colour);
+  text-decoration: none;
+}
+
+.contact a:hover,
+.email a:hover {
+  text-decoration: underline;
+}
+
+
+@media screen and (max-width: 768px) {
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .team-member {
+    padding: 1rem;
+  }
+
+  .team-member h3 {
+    font-size: 1.8rem;
+  }
+
+  .role {
+    line-height: 2;
+    margin-bottom: 1rem;
+  }
+
+  .contact,
+  .email {
+    gap: 2rem;
+    font-size: 1.4rem;
+    line-height: 1.8;
+  }
+}

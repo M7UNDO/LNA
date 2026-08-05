@@ -34,12 +34,13 @@
 }
 
 .navlinks {
-  font-family: var(--primary-font);
+  font-family: var(--lato);
+  font-size: 1.5rem;
   height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
   padding: 1rem;
 }
 

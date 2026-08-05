@@ -1,4 +1,5 @@
 import Placeholder from "../assets/user.png";
+import "../styles/LegalTeam.css";
 
 export default function LegalTeam() {
   return (
@@ -40,6 +41,3 @@ export default function LegalTeam() {
     </section>
   );
 }
-
-
-//Next add a profile section when you click on picture

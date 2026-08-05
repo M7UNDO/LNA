@@ -18,13 +18,14 @@
 }
 
 .services-header h1 {
-  font-size: 3.6rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-family: var(--prata);
+  font-size: 4rem;
+  font-weight: 400;
   margin-bottom: 1.5rem;
 }
 
 .services-header p {
+  font-weight: 400;
   font-size: 1.6rem;
   opacity: 0.65;
   line-height: 1.7;
@@ -61,8 +62,8 @@
 }
 
 .service-panel__title {
+  font-family: var(--prata);
   font-size: 1.9rem;
-  font-weight: 600;
   letter-spacing: -0.01em;
 }
 
@@ -85,7 +86,7 @@
   background: var(--accent-colour-hover);
   border: 1px solid rgba(255, 255, 255, 0.12);
   color: white;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 500;
   letter-spacing: 0.02em;
   text-decoration: none;

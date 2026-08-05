@@ -1,7 +1,9 @@
 import {useRef, useEffect} from "react";
+import Hero from "../components/Hero";
 import "../styles/About.css";
 import LegalTeam from "../components/LegalTeam";
 import ShinyOverlay from "../assets/backgrounds/Shiny-Overlay.svg";
+import AboutHero from "../assets/hero/law-about.png";
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 
@@ -9,7 +11,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
   useEffect(() => {
-
     gsap.utils.toArray(".about-section").forEach((section, i) => {
       gsap.fromTo(
         section,
@@ -49,7 +50,6 @@ export default function About() {
       );
     });
 
-
     gsap.utils.toArray(".value").forEach((value, i) => {
       gsap.fromTo(
         value,
@@ -73,12 +73,14 @@ export default function About() {
   return (
     <section className="about-page">
       <div className="about-hero" style={{backgroundImage: `url(${ShinyOverlay})`}}>
-        <h1>About Ngengebule Attorneys Inc</h1>
-        <p>Justice. Integrity. Excellence.</p>
+        <div className="about-hero-content">
+          <h1>Ngengebule Attorneys Inc</h1>
+          <p>Justice. Integrity. Excellence.</p>
+        </div>
       </div>
 
       <div className="about-container">
-        <section className="about-section">
+        <section className="about-section" id="history-section">
           <h2>History of the Firm</h2>
           <p>
             Ngengebule Attorneys Incorporated (LNA) was established in August 2020 by Luvuyo Gavin Ayanda Ngengebule.
@@ -100,7 +102,7 @@ export default function About() {
           </p>
         </section>
 
-        <section className="about-section">
+        <section className="about-section" id="overview-section">
           <h2>Company Overview</h2>
           <p>
             Ngengebule Attorneys Inc is a client-focused law firm committed to delivering high-quality legal services

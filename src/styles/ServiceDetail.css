@@ -8,6 +8,7 @@
 }
 
 .service-detail h1 {
+  font-family: var(--secondary-font);
   font-size: 3rem;
   margin-bottom: 2rem;
 }
@@ -29,9 +30,12 @@
 }
 
 .service-detail h2 {
+
+  font-family: var(--secondary-font);
+  font-size: 2.5rem;
+  font-weight: 600;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
-  font-size: 2rem;
   text-align: left;
 }
 

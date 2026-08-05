@@ -1,188 +1,85 @@
-#hero-banner {
-  position: relative;
+.hero-section {
+  height: 50vh;
   width: 100%;
-  min-height: 80vh;
-  padding-bottom: 4rem;
-  margin-bottom: 5rem;
-  overflow: hidden;
-}
-
-#hero-banner .slick-slider,
-#hero-banner .slick-list,
-#hero-banner .slick-track {
-  height: 100%;
-  min-height: 80vh;
-}
-
-.hero-slide-wrapper {
-  height: 80vh;
   position: relative;
-  outline: none;
-}
-
-.hero-slide {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  height: 100%;
+  align-items: flex-start;
+  color: white;
+  margin-bottom: 5rem;
+  padding: 0 2rem;
   overflow: hidden;
-}
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  filter: contrast(150%);
-  z-index: 1;
-  pointer-events: none;
-  user-select: none;
-  transform: scale(1);
-  transition: transform 2s ease;
-}
-
-.slick-current .hero-bg {
-  transform: scale(1.05);
-}
-
-.banner-overlay {
-  position: absolute;
-  inset: 0;
-  background-color: var(--accent-colour);
-  opacity: 0.7;
-  z-index: 2;
-  pointer-events: none;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 3;
-  max-width: 80rem;
-  margin: 0 auto;
-  text-align: center;
-  color: white;
-  padding: 0 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 3rem;
+  align-items: flex-start;
+  gap: 1rem;
+  z-index: 1;
 }
 
-.hero-content h1{
-  width: 100%;
-  font-family: var(--primary-font);
+.hero-section h1 {
+  font-family: var(--secondary-font);
+  font-size: 5.5rem;
+  font-weight: 400;
 }
 
-.hero-content p {
-  width: 100%;
-  font-family: var(--primary-font);
-  font-size: 1.6rem;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.cta-btn {
-  width: fit-content;
-  margin-top: 2rem;
-  padding: 1rem 2.5rem;
-  color: white;
-  border: 1px solid white;
-  border-radius: 0.5rem;
-  font-family: var(--primary-font);
-  font-size: 1.6rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-
-.cta-btn:hover {
-  background-color: white;
-  color: black;
-  transform: translateY(-2px);
-}
-
-#hero-banner .hero-dots {
-  position: absolute;
-  width: 100%;
-  z-index: 5;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
-  bottom: 4rem;
+.hero-section .hero-subheading {
+  font-size: 2rem;
+  font-weight: 500;
+  max-width: 60rem;
   text-align: center;
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
-#hero-banner .hero-dots:hover {
-  opacity: 1;
+.hero-img {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  height: 120%;
+  width: 100%;
+  object-position: center;
+  object-fit: cover;
+  filter: contrast(110%) brightness(70%);
 }
+/*
 
-#hero-banner .hero-dots li {
-  display: inline-block;
-  margin: 0 1rem;
-  width: auto;
-  height: auto;
-}
-
-#hero-banner .hero-dots li button {
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  background: transparent;
-  border: 2px solid white;
-  border-radius: 50%;
-  padding: 0;
+.hero-cta {
+  text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s;
-  font-size: 0;
-  color: transparent;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.164);
+  border-radius: 5rem;
+  background: var(--accent-colour);
+  color: white;
+  font-weight: 600;
+  margin-top: 5rem;
+  padding: 1.5rem 3rem;
+  transition: all 0.25s ease;
 }
 
-#hero-banner .hero-dots li button:before {
-  display: none;
+.hero-cta:hover {
+  transform: translateY(-4px);
+  background: var(--accent-colour-dark);
+  border-color: transparent;
 }
-
-#hero-banner .hero-dots li.slick-active button {
-  background-color: white;
-}
-
-@media screen and (min-width: 481px) {
-  #hero-banner .hero-dots li {
-    margin: 0 0.5rem;
-  }
-
-  #hero-banner .hero-dots li.slick-active button {
-    background-color: white;
-  }
-}
-
-@media screen and (min-width: 1025px) {
-  #hero-banner {
-    min-height: 75vh;
-  }
-
-  #hero-banner .slick-slider,
-  #hero-banner .slick-list,
-  #hero-banner .slick-track,
-  .hero-slide-wrapper {
-    height: 75vh;
-    min-height: 75vh;
+*/
+@media screen and (min-width: 450px) {
+  .hero-section {
+    align-items: center;
+    padding: 0;
   }
 
   .hero-content {
-    padding: 0 2rem;
-    gap: 2rem;
+    align-items: center;
   }
 
-  #hero-banner .hero-dots {
-    bottom: 3rem;
+  .hero-section h1 {
+    font-size: 5.5rem;
+  }
+
+  .hero-section p {
+    text-align: center;
   }
 }

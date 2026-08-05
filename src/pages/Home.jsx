@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import Hero from "../components/Hero";
+import DynamicHero from "../components/DyanmicHero";
 import ServiceContainer from "../components/ServiceContainer";
 import "../styles/Home.css";
 
@@ -32,7 +32,7 @@ function Home() {
 
   return (
     <>
-      <Hero />
+      <DynamicHero />
 
       <section className="practice-section">
         <h2 className="section-title">Practice Areas</h2>

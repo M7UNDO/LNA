@@ -1,40 +1,64 @@
 .about-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   background-image: url(../assets/backgrounds/Shiny-Overlay.svg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 30rem;
-  text-align: center;
-  padding: 8rem 2rem 5rem;
+  min-height: 40vh;
+  padding: 8rem 8rem 5rem;
   color: white;
+}
+
+.about-hero-content{
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 1rem;
 }
 
 .about-hero h1 {
-  margin: 2rem;
+  font-family: var(--prata);
 }
 
 .about-hero p {
+  opacity: 0.8;
   color: white;
+  font-family: var(--secondary-font);
   font-size: 1.8rem;
-  font-weight: 500;
 }
 
 .about-container {
-  max-width: 110rem;
-  margin: auto;
-  padding: 4rem 2rem 8rem;
 }
 
 .about-section {
-  margin-bottom: 8rem;
+  padding: 5rem 15%;
+}
+
+#history-section{
+  background: red;
+
+}
+
+#overview-section{
+  background: lightblue;
 }
 
 .about-section h2 {
+  opacity: 0.7;
+  font-family: var(--secondary-font);
+  font-size: 3rem;
+  font-weight: 400;
   margin: 3rem 0;
-  padding-left: 1.2rem;
+  text-align: left;
+  letter-spacing: -0.5px;
 }
 
-.about-section p {
+.about-container p {
+  font-family: var(--open-sans);
   font-size: 1.6rem;
   line-height: 1.7;
   margin-bottom: 15px;
@@ -71,54 +95,6 @@
   border-bottom: 1px solid rgba(128, 128, 128, 0.411);
 }
 
-.profile {
-  width: 10rem;
-  height: 10rem;
-}
-
-.team-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  margin-bottom: 1rem;
-}
-
-.team-member {
-  padding: 2.5rem;
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.team-member h3 {
-  font-size: 1.8rem;
-}
-
-.role {
-  color: var(--accent-colour);
-  font-size: 1.6rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
-}
-
-.contact,
-.email {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-size: 1.6rem;
-  color: var(--accent-colour);
-  margin-top: 1rem;
-}
-
-.contact a,
-.email a {
-  color: var(--accent-colour);
-  text-decoration: none;
-}
-
-.contact a:hover,
-.email a:hover {
-  text-decoration: underline;
-}
 @media screen and (max-width: 992px) {
   .about-container {
     padding: 6rem;
@@ -135,13 +111,6 @@
     flex-direction: column;
     gap: 3rem;
   }
-
-  .team-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-    margin-bottom: 1rem;
-  }
 }
 
 @media screen and (max-width: 480px) {
@@ -149,7 +118,7 @@
     padding: 5rem 3rem;
   }
 
-  .about-section p {
+  .about-container p {
     font-size: 1.4rem;
     line-height: 1.8;
     margin-bottom: 1.5rem;
@@ -179,25 +148,5 @@
     border: 1px solid var(--accent-colour-hover);
     color: var(--accent-colour-hover);
     margin-bottom: 0;
-  }
-
-  .team-member {
-    padding: 1rem;
-  }
-
-  .team-member h3 {
-    font-size: 1.8rem;
-  }
-
-  .role {
-    line-height: 2;
-    margin-bottom: 1rem;
-  }
-
-  .contact,
-  .email {
-    gap: 2rem;
-    font-size: 1.4rem;
-    line-height: 1.8;
   }
 }

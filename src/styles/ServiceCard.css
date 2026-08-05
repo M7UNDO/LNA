@@ -18,7 +18,6 @@
 }
 
 .service-card {
-  font-family: var(--primary-font);
   height: 100%;
   background: var(--background-colour);
   color: var(--typography-colour);
@@ -52,6 +51,7 @@
 }
 
 .service-card h3 {
+  font-family: var(--lato);
   font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 1rem;
